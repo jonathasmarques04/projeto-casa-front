@@ -1,0 +1,6 @@
+export * from './Header'
+export * from './MainSuperior'
+export * from './MainCentral'
+export * from './MainInput'
+export * from './Card'
+export * from './Footer'
