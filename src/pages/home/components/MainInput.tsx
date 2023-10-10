@@ -1,7 +1,6 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { Input, InputProps } from "@mui/base/Input";
 
-import Image from "next/image";
 import localFont from "@next/font/local";
 import { styled } from "@mui/system";
 import React from "react";

@@ -89,19 +89,3 @@ function MainCentral() {
   );
 }
 export default MainCentral;
-
-{/* <Grid xs={4} item sx={{ margin: "auto" }}>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Image
-                src="/conforto.svg"
-                width={120}
-                height={120}
-                alt="Picture of the author"
-              />
-            </Box>
-            <Typography variant="caption">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate sapiente sit error id nam mollitia, nostrum accusamus
-              voluptas facilis alias quibusdam ipsum.
-            </Typography>
-          </Grid> */}

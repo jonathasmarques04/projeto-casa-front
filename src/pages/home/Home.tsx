@@ -5,9 +5,7 @@ import React from "react";
 import MainInput from "./components/MainInput";
 import Header from "./components/Header";
 import CardInput from "./components/Card";
-import { Grid, Typography } from "@mui/material";
 
-import Image from "next/image";
 import Footer from "./components/Footer";
 
 const openSansExtraBold = localFont({
@@ -19,7 +17,7 @@ const imagem = {
   imagem2: '/instagram.svg',
 }
 
-function Home(imagens: {}[] ) {
+function Home() {
   return (
     <>
       <Header />
