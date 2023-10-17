@@ -13,6 +13,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 
 import Image from "next/image";
 import localFont from '@next/font/local'
+import { sxButtonStyle, sxListStyle } from "./styles";
 
 const openSansExtraBold = localFont({
   src: '../../../../../public/Causten-Regular.otf' 
@@ -44,7 +45,7 @@ function Header() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -93,7 +94,7 @@ function Header() {
             >
               {pages.map((page) => (
                 <MenuItem className={openSansExtraBold.className} key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography sx={sxListStyle} textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -138,7 +139,7 @@ function Header() {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Fale conosco">
-              <Button disableElevation color="error" variant="contained" >Fale conosco</Button>
+              <Button sx={sxButtonStyle} disableElevation color="error" variant="contained" >Fale conosco</Button>
             </Tooltip>
           </Box>
         </Toolbar>

@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 
 import Image from "next/image";
 import localFont from "@next/font/local";
+import { sxButtonMaior } from "./style";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
@@ -25,7 +26,7 @@ function MainCentral() {
             disableElevation
             color="error"
             variant="contained"
-            sx={{ display: "flex", margin: "auto" }}
+            sx={sxButtonMaior}
           >
             CONHEÇA A CASA
           </Button>
@@ -60,7 +61,7 @@ function MainCentral() {
             disableElevation
             color="error"
             variant="contained"
-            sx={{ display: "flex", margin: "auto" }}
+            sx={sxButtonMaior}
           >
             O QUE FAZEMOS?
           </Button>

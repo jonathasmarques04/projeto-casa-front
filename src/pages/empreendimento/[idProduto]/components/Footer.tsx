@@ -9,7 +9,7 @@ const imagem: { [key: string]: { src: string; width: number; height: number } } 
 
 function Footer() {
   return (
-    <Grid container maxWidth="xl" xs={12} sx={{ borderTop: '3px solid red' }}>
+    <Grid container maxWidth="xl" mt={8} xs={12} sx={{ borderTop: '3px solid red' }}>
       {Object.keys(imagem).map((key) => (
         <Grid item key={key}>
           <Typography

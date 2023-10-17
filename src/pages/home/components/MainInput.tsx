@@ -4,6 +4,7 @@ import { Input, InputProps } from "@mui/base/Input";
 import localFont from "@next/font/local";
 import { styled } from "@mui/system";
 import React from "react";
+import { sxButtonMaior } from "./style";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
@@ -80,7 +81,7 @@ function InputMain() {
             disableElevation
             color="error"
             variant="contained"
-            sx={{ display: "flex", margin: "auto" }}
+            sx={sxButtonMaior}
           >
             IMÓVEIS À VENDA
           </Button>

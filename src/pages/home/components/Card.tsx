@@ -16,7 +16,7 @@ const openSansExtraBold = localFont({
 function CardInput() {
   return (
     <>
-      <Card sx={{ maxWidth: 350, margin: 'auto', border: '2px solid red' }}>
+      <Card sx={{ maxWidth: 350, margin: 'auto' }}>
       <CardMedia
         sx={{ height: 140 }}
         image="/300849399_1378995459293714_446150436152832763_n.jpg"
