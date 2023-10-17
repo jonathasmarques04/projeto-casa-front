@@ -1,5 +1,14 @@
-import { Button, Grid } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  Grid,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+} from "@mui/material";
 import { Input, InputProps } from "@mui/base/Input";
+import SearchIcon from "@mui/icons-material/Search";
 
 import localFont from "@next/font/local";
 import { styled } from "@mui/system";
@@ -76,7 +85,7 @@ function InputMain() {
   return (
     <>
       <Grid container className={openSansExtraBold.className}>
-      <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
+        <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
           <Button
             disableElevation
             color="error"
@@ -95,10 +104,20 @@ function InputMain() {
           sx={{ textAlign: "center" }}
         >
           <Grid xs={4} item sx={{ margin: "auto" }}>
-            <CustomInput
-              aria-label="Demo input"
-              placeholder="Buscar por localidade"
-            />
+            <FormControl sx={{ m: 0, width: "35ch" }} color="error" variant="outlined">
+              <InputLabel color="error" htmlFor="outlined-adornment-password">
+                buscar por localidade
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <SearchIcon color="error" />
+                  </InputAdornment>
+                }
+                label="Buscar por localidade"
+              />
+            </FormControl>
           </Grid>
         </Grid>
       </Grid>

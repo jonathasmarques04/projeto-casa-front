@@ -48,6 +48,14 @@ export const sxButtonMaior: SxProps<Theme> = {
   fontWeight: 'bold',
 };
 
+export const sxInput: SxProps<Theme> = {
+  width: '380px',
+  border: '#FF2700 3px solid',
+  borderRadius: '10px',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
 export const sxListStyle: SxProps<Theme> = {
   fontWeight: "bold",
   textDecoration: "none",

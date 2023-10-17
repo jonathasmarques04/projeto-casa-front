@@ -41,7 +41,7 @@ function Empreendimento() {
   };
 
   const router = useRouter();
-  const idProduto = router.query.idProduto; // Obtém o valor da query 'idProduto' da URL
+  const idProduto = router.query.idProduto;
 
   const [apiImages, setApiImages] = useState<string[]>([]);
 
