@@ -13,7 +13,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 
 import Image from "next/image";
 import localFont from '@next/font/local'
-import { sxButtonHeader, sxButtonStyle } from "./style";
+import { sxButtonHeader } from "./style";
 
 const openSansExtraBold = localFont({
   src: '../../../../public/Causten-Regular.otf' 
@@ -51,7 +51,7 @@ function Header() {
 
   return (
     
-      <Container  maxWidth="xl">
+      <Container  maxWidth="xl" sx={{ margin: 0, ml: '70px' }}>
         <Toolbar disableGutters sx={{ gap: 12 }}>
           <Typography
             variant="h6"
@@ -73,6 +73,7 @@ function Header() {
               width={120}
               height={120}
               alt="Picture of the author"
+              
             />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -120,7 +121,6 @@ function Header() {
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
@@ -128,6 +128,7 @@ function Header() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+             
             }}
           >
             <Image
@@ -143,7 +144,7 @@ function Header() {
               className={openSansExtraBold.className}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block", fontWeight: 500 }}
               >
                 {page}
               </Button>

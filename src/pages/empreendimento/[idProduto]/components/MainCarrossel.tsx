@@ -113,8 +113,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
             </Box>
           </Box>
         </Grid>
-      </Grid>
-      
+      </Grid> 
     </> 
   );
 }

@@ -12,7 +12,7 @@ function MainSuperior() {
   return (
     <>
     <Grid container sx={{ backgroundImage: 'url("/fundo.svg")' }}>
-      <Grid item xs={12} margin={2} gap={8} display='flex'>
+      <Grid item xs={12} ml={12} gap={8} display='flex'>
         <Grid item xs={6} mt={12}>
         <Typography variant="h1" color='#FF2700' className={openSansExtraBold.className}>
           Um novo jeito de construir

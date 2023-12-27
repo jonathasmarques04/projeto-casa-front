@@ -90,7 +90,7 @@ import {
         light: indigo['0'], // #DFE8FC
       },
       error: {
-        pure: red['70'], // #c61616
+        pure: red['60'], // #c61616
         light: red['0'], // #ffe4e4
       },
       success: {

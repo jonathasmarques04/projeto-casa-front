@@ -1,32 +1,21 @@
 import * as React from "react";
 import Header from "./components/Header";
-import MainSuperior from "./components/MainSuperior";
-import MainCentral from "./components/MainCentral";
-import { Grid, Slide, Box, Button } from "@mui/material";
-import localFont from "@next/font/local";
-import Image from "next/image";
+import MainSuperior, { fetchInformacoesSuperiorApi } from "./components/MainSuperior";
+import MainCentral, { fetchInformacoesApi } from "./components/MainCentral";
 import Carrossel from "./components/MainCarrossel";
 import Footer from "./components/Footer";
 import { fetchImagensDaAPI } from './components/MainCarrossel'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
-});
-
-
-
 function Empreendimento() {
   const items = [
-    { src: "/300849399_1378995459293714_446150436152832763_n.jpg" },
-    { src: "/328724373_215163131081698_7412175627485027946_n.jpg" },
-    { src: "/capturada.PNG" },
-    { src: "/capturadaa.PNG" },
-    { src: "/informacoes-5.svg" },
+    { src: "" },
   ];
 
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [apiInformation, setApiInformation] = useState<string[]>([]);
+  const [apiSuperiorInformation, setApiSuperiorInformation] = useState<string[]>([]);
 
   const handlePrev = () => {
     setActiveIndex((prevIndex) =>
@@ -54,6 +43,12 @@ function Empreendimento() {
           .then((imagens) => {
             setApiImages(imagens);
           });
+        fetchInformacoesApi(param).then((informacoes) => {
+          setApiInformation(informacoes)
+        })
+        fetchInformacoesSuperiorApi(param).then((informations) => {
+          setApiSuperiorInformation(informations)
+        })
       }
     }
   }, [idProduto]);
@@ -61,8 +56,8 @@ function Empreendimento() {
   return (
     <>
       <Header />
-      <MainSuperior />
-      <MainCentral />
+      <MainSuperior apiInformations={apiSuperiorInformation} />
+      <MainCentral apiInformations={apiInformation} />
       <Carrossel apiImages={apiImages} />
       <Footer />
     </>
@@ -70,3 +65,4 @@ function Empreendimento() {
 }
 
 export default Empreendimento;
+

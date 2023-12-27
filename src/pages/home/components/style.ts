@@ -20,7 +20,7 @@ export const sxButtonHeader: SxProps<Theme> = {
   justifyContent: "center",
   alignItems: "center",
   color: "#fff",
-  borderRadius: "15px",
+  borderRadius: "10px",
   boxShadow: "0px 10.0979px 10.0979px rgba(255, 39, 0, 0.2)",
   cursor: "pointer",
   textTransform: "uppercase",

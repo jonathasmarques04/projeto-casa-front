@@ -13,7 +13,49 @@ const openSansExtraBold = localFont({
   src: '../../../../public/Causten-Regular.otf' 
  })
 
-function CardInput() {
+ interface Produto {
+  suites: string;
+  areaUtil: string;
+  areaTotal: string;
+  titulo: string;
+}
+
+interface ApiResponse {
+  produto: Produto;
+}
+
+interface ApiInformations {
+  apiInformations: string[];
+}
+
+
+export async function fetchCard(param: string): Promise<string[]>{
+    try {
+      const response = await fetch(`http://localhost:3020/produto/${param}`);
+      if (!response.ok) {
+        throw new Error("Erro na requisição da API");
+      }
+  
+      const data = await response.json();
+      const produtos: Produto = data.produto;
+  
+      const information: string[] = [
+        produtos.suites,
+        produtos.areaUtil,
+        produtos.areaTotal,
+        produtos.titulo,
+      ];
+  
+      return information;
+    } catch (error) {
+      console.error("Erro ao buscar informações da API:", error);
+      return [];
+    }
+  }
+
+
+function CardInput({ apiInformations } : ApiInformations) {
+
   return (
     <>
       <Card sx={{ maxWidth: 350, margin: 'auto' }}>
@@ -32,7 +74,6 @@ function CardInput() {
       </CardContent>
       <CardActions>
         <Button size="small" color="error">Ver mais</Button>
-        
       </CardActions>
     </Card>
     </>

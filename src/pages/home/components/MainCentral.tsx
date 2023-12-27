@@ -30,17 +30,17 @@ function MainCentral() {
           >
             CONHEÇA A CASA
           </Button>
-          <Typography variant="h6" margin={2}>
+          <Typography variant="h6" m={'auto'} my={4}>
             A{" "}
             <span style={{ color: "#FF2700" }}>Construtora Carvalho de Sá</span>{" "}
             nasce da ideia de trazer uma nova forma de criar e gerenciar
             construções, com o foco familiar, moderno, simples e tecnológico.
           </Typography>
         </Grid>
-        <Grid item gap={4} p={8} display="flex" xs={12} sx={{ textAlign: 'center' }}>
+        <Grid item gap={0} p={8} display="flex" xs={12} sx={{ textAlign: 'center' }}>
         {Object.keys(informacoes).map((key) => (
         <>
-        <Grid xs={4} key={key} item sx={{ margin: "auto" }}>
+        <Grid xs={3} key={key} item sx={{ margin: "auto"}}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Image
             src={informacoes[key].src}
@@ -69,7 +69,7 @@ function MainCentral() {
         <Grid item gap={4} p={8} display="flex" xs={12} sx={{ textAlign: 'center' }}>
         {Object.keys(informacoes).map((key) => (
         <>
-        <Grid xs={4} key={key} item sx={{ margin: "auto" }}>
+        <Grid xs={3} key={key} item sx={{ margin: "auto" }}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Image
             src={informacoes[key].src}

@@ -363,6 +363,7 @@ export const MuiTheme = createTheme(
           },
         },
       },
+      
     },
   },
   ptBR
