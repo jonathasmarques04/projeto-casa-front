@@ -1,39 +1,35 @@
-import localFont from "@next/font/local";
 import MainSuperior from "./components/MainSuperior";
 import MainCentral from "./components/MainCentral";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainInput from "./components/MainInput";
 import Header from "./components/Header";
 import CardInput, { fetchCard } from "./components/Card";
-import { useEffect } from "react";
 
 import Footer from "./components/Footer";
 import { useRouter } from "next/router";
 
-const openSansExtraBold = localFont({
-  src: '../../../public/Causten-Regular.otf' 
- })
-
 function Home() {
-
-  const router = useRouter();
-  const idProduto = router.query.idProduto;
   const [apiCard, setApiCard] = useState<string[]>([]);
+  const [filteredCard, setFilteredCard] = useState<string[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
-    if (typeof idProduto === 'string') {
-      const idProdutoNumber = parseInt(idProduto, 10);
-      if (!isNaN(idProdutoNumber)) {
-        const param = idProdutoNumber.toString();
-        fetchCard(param)
-          .then((card) => {
-            setApiCard(card);
-          });
-        
-      }
-    }
-  }, [idProduto]);
+    const fetchData = async () => {
+      const data = await fetchCard("62");
+      setApiCard(data);
+    };
 
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const filteredProducts = apiCard.filter((product) => {
+      const parsedProduct = JSON.parse(product);
+      return parsedProduct.idProduto === 62;
+    });
+
+    setFilteredCard(filteredProducts);
+  }, [apiCard]);
 
   return (
     <>
@@ -47,4 +43,3 @@ function Home() {
   );
 }
 export default Home;
-

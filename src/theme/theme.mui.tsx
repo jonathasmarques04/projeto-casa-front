@@ -1,8 +1,8 @@
-import { createTheme } from '@mui/material';
-import { ptBR } from '@mui/material/locale';
-import { IconAlertCircle } from '@tabler/icons-react';
+import { createTheme } from "@mui/material";
+import { ptBR } from "@mui/material/locale";
+import { IconAlertCircle } from "@tabler/icons-react";
 
-import { ThemeProvider } from './theme.provider';
+import { ThemeProvider } from "./theme.provider";
 
 export const MuiTheme = createTheme(
   {
@@ -11,22 +11,22 @@ export const MuiTheme = createTheme(
       values: ThemeProvider.breakpoints,
     },
     palette: {
-      mode: 'light',
+      mode: "light",
       primary: {
         main: ThemeProvider.palette.primary[40],
         light: ThemeProvider.palette.primary[30],
         dark: ThemeProvider.palette.primary[50],
         contrastText: ThemeProvider.palette.common.white,
-        '50': ThemeProvider.palette.primary[0],
-        '100': ThemeProvider.palette.primary[5],
-        '200': ThemeProvider.palette.primary[10],
-        '300': ThemeProvider.palette.primary[20],
-        '400': ThemeProvider.palette.primary[30],
-        '500': ThemeProvider.palette.primary[40],
-        '600': ThemeProvider.palette.primary[50],
-        '700': ThemeProvider.palette.primary[60],
-        '800': ThemeProvider.palette.primary[70],
-        '900': ThemeProvider.palette.primary[80],
+        "50": ThemeProvider.palette.primary[0],
+        "100": ThemeProvider.palette.primary[5],
+        "200": ThemeProvider.palette.primary[10],
+        "300": ThemeProvider.palette.primary[20],
+        "400": ThemeProvider.palette.primary[30],
+        "500": ThemeProvider.palette.primary[40],
+        "600": ThemeProvider.palette.primary[50],
+        "700": ThemeProvider.palette.primary[60],
+        "800": ThemeProvider.palette.primary[70],
+        "900": ThemeProvider.palette.primary[80],
         A100: ThemeProvider.palette.primary[90],
         A200: ThemeProvider.palette.primary[100],
       },
@@ -35,30 +35,30 @@ export const MuiTheme = createTheme(
         light: ThemeProvider.palette.secondary[30],
         dark: ThemeProvider.palette.secondary[50],
         contrastText: ThemeProvider.palette.common.white,
-        '50': ThemeProvider.palette.secondary[0],
-        '100': ThemeProvider.palette.secondary[5],
-        '200': ThemeProvider.palette.secondary[10],
-        '300': ThemeProvider.palette.secondary[20],
-        '400': ThemeProvider.palette.secondary[30],
-        '500': ThemeProvider.palette.secondary[40],
-        '600': ThemeProvider.palette.secondary[50],
-        '700': ThemeProvider.palette.secondary[60],
-        '800': ThemeProvider.palette.secondary[70],
-        '900': ThemeProvider.palette.secondary[80],
+        "50": ThemeProvider.palette.secondary[0],
+        "100": ThemeProvider.palette.secondary[5],
+        "200": ThemeProvider.palette.secondary[10],
+        "300": ThemeProvider.palette.secondary[20],
+        "400": ThemeProvider.palette.secondary[30],
+        "500": ThemeProvider.palette.secondary[40],
+        "600": ThemeProvider.palette.secondary[50],
+        "700": ThemeProvider.palette.secondary[60],
+        "800": ThemeProvider.palette.secondary[70],
+        "900": ThemeProvider.palette.secondary[80],
         A100: ThemeProvider.palette.secondary[90],
         A200: ThemeProvider.palette.secondary[100],
       },
       grey: {
-        '50': ThemeProvider.palette.gray[0],
-        '100': ThemeProvider.palette.gray[5],
-        '200': ThemeProvider.palette.gray[10],
-        '300': ThemeProvider.palette.gray[20],
-        '400': ThemeProvider.palette.gray[30],
-        '500': ThemeProvider.palette.gray[40],
-        '600': ThemeProvider.palette.gray[50],
-        '700': ThemeProvider.palette.gray[60],
-        '800': ThemeProvider.palette.gray[70],
-        '900': ThemeProvider.palette.gray[80],
+        "50": ThemeProvider.palette.gray[0],
+        "100": ThemeProvider.palette.gray[5],
+        "200": ThemeProvider.palette.gray[10],
+        "300": ThemeProvider.palette.gray[20],
+        "400": ThemeProvider.palette.gray[30],
+        "500": ThemeProvider.palette.gray[40],
+        "600": ThemeProvider.palette.gray[50],
+        "700": ThemeProvider.palette.gray[60],
+        "800": ThemeProvider.palette.gray[70],
+        "900": ThemeProvider.palette.gray[80],
         A100: ThemeProvider.palette.gray[90],
         A200: ThemeProvider.palette.gray[100],
       },
@@ -90,7 +90,7 @@ export const MuiTheme = createTheme(
       },
     },
     typography: {
-      fontFamily: [ThemeProvider.typography.family, 'sans-serif'].join(','),
+      fontFamily: [ThemeProvider.typography.family, "sans-serif"].join(","),
       h1: ThemeProvider.typography.h1,
       h2: ThemeProvider.typography.h2,
       h3: ThemeProvider.typography.h3,
@@ -103,7 +103,7 @@ export const MuiTheme = createTheme(
       subtitle2: ThemeProvider.typography.body4,
       button: {
         ...ThemeProvider.typography.button,
-        textTransform: 'initial',
+        textTransform: "initial",
       },
       caption: ThemeProvider.typography.caption,
     },
@@ -113,74 +113,34 @@ export const MuiTheme = createTheme(
     components: {
       MuiButton: {
         defaultProps: {
-          variant: 'contained',
-          color: 'secondary',
-          size: 'medium',
+          variant: "contained",
+          color: "secondary",
+          size: "medium",
         },
         styleOverrides: {
-          root: ({ ownerState }) => ({
-            borderRadius: ThemeProvider.spacing[1],
-            boxShadow: ThemeProvider.shadows.none,
-
-            minWidth: ThemeProvider.spacing[14],
-            padding: `${ThemeProvider.spacing[2]}px ${ThemeProvider.spacing[6]}px`,
-
-            ...(ownerState.size === 'small' && {
-              height: ThemeProvider.spacing[8],
-              minHeight: ThemeProvider.spacing[8],
-            }),
-            ...(ownerState.size === 'medium' && {
-              height: ThemeProvider.spacing[10],
-              minHeight: ThemeProvider.spacing[10],
-            }),
-            ...(ownerState.size === 'large' && {
-              height: ThemeProvider.spacing[11],
-              minHeight: ThemeProvider.spacing[11],
-            }),
-
-            ...(ownerState.variant === 'outlined' && {
-              color: ThemeProvider.palette.primary[50],
-              borderColor: ThemeProvider.palette.primary[50],
-              borderWidth: '2px',
-              '&:hover': {
-                borderWidth: '2px',
-              },
-              '&:disabled': {
-                borderWidth: '2px',
-              },
-            }),
-
-            ...(ownerState.variant === 'text' && {
-              color: ThemeProvider.palette.primary[60],
-            }),
-
-            ...(ownerState.disabled && {
-              color: ThemeProvider.palette.text[5],
-
-              ...(ownerState.variant === 'contained' && {
-                backgroundColor: ThemeProvider.palette.gray[20] + '!important',
-              }),
-            }),
-
-            ...(ownerState.color === 'error' && {
-              color: ThemeProvider.palette.error.pure,
-            }),
+          root: ({ ownerState, theme }) => ({
+            color: theme.palette.common.white,
+            backgroundColor: "#FF2700",
+            "&:hover": {
+              backgroundColor: "#FF2700",
+            },
           }),
         },
       },
+
       MuiChip: {
         defaultProps: {
-          variant: 'outlined',
-          size: 'small',
+          variant: "outlined",
+          size: "small",
         },
         styleOverrides: {
           root: ({ ownerState, theme }) => ({
             borderRadius: ThemeProvider.spacing[1],
-            ...(ownerState.variant === 'outlined' && {
+            ...(ownerState.variant === "outlined" && {
               backgroundColor:
                 theme.palette[
-                  ownerState.color === 'default' || !ownerState.color
-                    ? 'primary'
+                  ownerState.color === "default" || !ownerState.color
+                    ? "primary"
                     : ownerState.color
                 ].light,
             }),
@@ -191,7 +151,7 @@ export const MuiTheme = createTheme(
         defaultProps: {
           autoHideDuration: 3500,
           transitionDuration: 1000,
-          anchorOrigin: { vertical: 'top', horizontal: 'right' },
+          anchorOrigin: { vertical: "top", horizontal: "right" },
         },
       },
       MuiAlert: {
@@ -202,43 +162,43 @@ export const MuiTheme = createTheme(
         },
         styleOverrides: {
           root: ({ ownerState }) => ({
-            ...(ownerState.severity === 'success' && {
-              border: '1px solid',
+            ...(ownerState.severity === "success" && {
+              border: "1px solid",
               borderColor: ThemeProvider.palette.success.pure,
               backgroundColor: ThemeProvider.palette.success.light,
 
-              '& .MuiAlert-icon': {
+              "& .MuiAlert-icon": {
                 color: ThemeProvider.palette.success.pure,
               },
             }),
 
-            ...(ownerState.severity === 'error' && {
-              border: '1px solid',
+            ...(ownerState.severity === "error" && {
+              border: "1px solid",
               borderColor: ThemeProvider.palette.error.pure,
               backgroundColor: ThemeProvider.palette.error.light,
 
-              '& .MuiAlert-icon': {
+              "& .MuiAlert-icon": {
                 color: ThemeProvider.palette.error.pure,
               },
             }),
 
-            ...(ownerState.severity === 'warning' &&
-              ownerState.variant === 'standard' && {
+            ...(ownerState.severity === "warning" &&
+              ownerState.variant === "standard" && {
                 backgroundColor: ThemeProvider.palette.warning.light,
 
-                '& .MuiAlert-icon, & .MuiTypography-root': {
+                "& .MuiAlert-icon, & .MuiTypography-root": {
                   color: ThemeProvider.palette.warning.pure,
                 },
               }),
           }),
           icon: {
-            alignItems: 'center',
+            alignItems: "center",
           },
         },
       },
       MuiTooltip: {
         defaultProps: {
-          placement: 'top-start',
+          placement: "top-start",
         },
         styleOverrides: {
           tooltip: {
@@ -252,7 +212,7 @@ export const MuiTheme = createTheme(
       MuiTypography: {
         styleOverrides: {
           root: {
-            wordWrap: 'break-word',
+            wordWrap: "break-word",
           },
         },
       },
@@ -265,8 +225,8 @@ export const MuiTheme = createTheme(
       },
       MuiTextField: {
         defaultProps: {
-          variant: 'standard',
-          helperText: ' ',
+          variant: "standard",
+          helperText: " ",
         },
       },
       MuiInputBase: {
@@ -278,16 +238,18 @@ export const MuiTheme = createTheme(
           },
           input: {
             padding: `${ThemeProvider.spacing[3]}px`,
-            height: 'unset',
+            height: "unset",
           },
         },
       },
       MuiButtonBase: {
         styleOverrides: {
-            root: {
-                backgroundColor: '#FF2700',
-            }
-        }
+          root: {
+            "&:hover": {
+              backgroundColor: "#FF2700",
+            },
+          },
+        },
       },
       MuiFormHelperText: {
         styleOverrides: {
@@ -309,16 +271,16 @@ export const MuiTheme = createTheme(
       MuiAutocomplete: {
         styleOverrides: {
           endAdornment: {
-            top: 'unset',
+            top: "unset",
           },
           paper: {
             ...ThemeProvider.typography.body3,
           },
           root: {
-            '& .MuiInput-root': {
+            "& .MuiInput-root": {
               paddingBottom: 0,
 
-              '& .MuiInput-input': {
+              "& .MuiInput-input": {
                 padding: `${ThemeProvider.spacing[3]}px`,
               },
             },
@@ -328,7 +290,7 @@ export const MuiTheme = createTheme(
       MuiLinearProgress: {
         styleOverrides: {
           root: {
-            height: '6px',
+            height: "6px",
             borderRadius: 4,
           },
         },
@@ -336,11 +298,11 @@ export const MuiTheme = createTheme(
       MuiAccordion: {
         styleOverrides: {
           root: {
-            boxShadow: 'none',
+            boxShadow: "none",
 
-            '&.Mui-expanded': {
+            "&.Mui-expanded": {
               margin: 0,
-              '&:before': {
+              "&:before": {
                 opacity: 1,
               },
             },
@@ -350,11 +312,11 @@ export const MuiTheme = createTheme(
       MuiTab: {
         styleOverrides: {
           root: {
-            borderBottom: '1px solid',
+            borderBottom: "1px solid",
             borderColor: ThemeProvider.palette.gray[20],
             ...ThemeProvider.typography.body3,
 
-            '&.Mui-selected': {
+            "&.Mui-selected": {
               color: ThemeProvider.palette.text[20],
               fontWeight: 600,
 
@@ -363,7 +325,6 @@ export const MuiTheme = createTheme(
           },
         },
       },
-      
     },
   },
   ptBR

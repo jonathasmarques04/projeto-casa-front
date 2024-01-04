@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Grid, Slide, Box, Button } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import localFont from "@next/font/local";
 import Image from "next/image";
 import { sxButtonMaior } from "./styles";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 const openSansExtraBold = localFont({
   src: "../../../../../public/Causten-Regular.otf",
@@ -31,7 +31,6 @@ interface Produto {
 interface ApiResponse {
   produto: Produto;
 }
-
 
 interface CarrosselProps {
   apiImages: string[];
@@ -64,9 +63,7 @@ export async function fetchImagensDaAPI(param: string): Promise<string[]> {
 }
 
 function Carrossel({ apiImages }: CarrosselProps) {
-
   const [activeIndex, setActiveIndex] = useState(0);
-  
 
   const handlePrev = () => {
     setActiveIndex((prevIndex) =>
@@ -81,40 +78,40 @@ function Carrossel({ apiImages }: CarrosselProps) {
   };
 
   return (
-    <>
-      <Grid container>
-        <Grid pt={8} item sx={{ margin: "auto" }}>
-          <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
-            <Button
-              disableElevation
-              color="error"
-              variant="contained"
-              sx={sxButtonMaior}
-            >
-              GALERIA
-            </Button>
-          </Grid>
-          <Box mt={12} display="flex" justifyContent="center">
-            <Box display="flex" alignItems="center" justifyContent="center">
-              <Button onClick={handlePrev}>
-              <ArrowBackIosNewIcon color="error" />
-              </Button>
-              <Slide direction="right" in={true}>
-                <Grid display="flex" justifyContent="center" margin={"auto"}>
-                  <Image
-                    src={apiImages[activeIndex]}
-                    width={500}
-                    height={500}
-                    alt="Imagem"
-                  />
-                </Grid>
-              </Slide>
-              <Button onClick={handleNext}><ArrowForwardIosIcon color="error" /></Button>
-            </Box>
-          </Box>
+    <Grid container>
+      <Grid pt={8} item sx={{ margin: "auto" }}>
+        <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
+          <Button
+            disableElevation
+            color="error"
+            variant="contained"
+            sx={sxButtonMaior}
+          >
+            GALERIA
+          </Button>
         </Grid>
-      </Grid> 
-    </> 
+        <Box mt={12} display="flex" justifyContent="center">
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <Button onClick={handlePrev}>
+              <ArrowBackIosNewIcon color="error" />
+            </Button>
+            <Slide direction="right" in={true}>
+              <Grid display="flex" justifyContent="center" margin={"auto"}>
+                <Image
+                  src={apiImages[activeIndex]}
+                  width={500}
+                  height={500}
+                  alt="Imagem"
+                />
+              </Grid>
+            </Slide>
+            <Button onClick={handleNext}>
+              <ArrowForwardIosIcon color="error" />
+            </Button>
+          </Box>
+        </Box>
+      </Grid>
+    </Grid>
   );
 }
 
@@ -122,4 +119,3 @@ export default Carrossel;
 function setActiveIndex(arg0: (prevIndex: any) => number) {
   throw new Error("Function not implemented.");
 }
-

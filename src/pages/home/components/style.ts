@@ -13,6 +13,9 @@ export const sxButtonStyle: SxProps<Theme> = {
   border: "none",
   height: "5.0vh",
   fontSize: 16,
+  ".css-1bfcrn0-MuiButtonBase-root-MuiButton-root:hover": {
+    backgroundColor: "#FF2700",
+  },
 };
 
 export const sxButtonHeader: SxProps<Theme> = {
@@ -20,19 +23,23 @@ export const sxButtonHeader: SxProps<Theme> = {
   justifyContent: "center",
   alignItems: "center",
   color: "#fff",
+  backgroundColor: "#FF2700",
   borderRadius: "10px",
   boxShadow: "0px 10.0979px 10.0979px rgba(255, 39, 0, 0.2)",
   cursor: "pointer",
   textTransform: "uppercase",
   outline: "none",
   border: "none",
-  height: "5.0vh",
+  height: "8vh",
   fontSize: 16,
+  "&:hover": {
+    backgroundColor: "#FF2700",
+  },
 };
 
 export const sxButtonMaior: SxProps<Theme> = {
-  display: 'flex',
-  margin: 'auto',
+  display: "flex",
+  margin: "auto",
   alignItems: "center",
   color: "#fff",
   backgroundColor: "#FF2700",
@@ -43,17 +50,17 @@ export const sxButtonMaior: SxProps<Theme> = {
   texttransform: "uppercase",
   outline: "none",
   border: "none",
-  height: "6.0vh",
+  height: "8.0vh",
   width: "90%",
-  fontWeight: 'bold',
+  fontWeight: "bold",
 };
 
 export const sxInput: SxProps<Theme> = {
-  width: '380px',
-  border: '#FF2700 3px solid',
-  borderRadius: '10px',
-  justifyContent: 'center',
-  alignItems: 'center',
+  width: "380px",
+  border: "#FF2700 3px solid",
+  borderRadius: "10px",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 export const sxListStyle: SxProps<Theme> = {

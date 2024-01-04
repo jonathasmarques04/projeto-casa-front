@@ -20,10 +20,6 @@ interface Produto {
   descricao: string;
 }
 
-interface ApiResponse {
-  produto: Produto;
-}
-
 interface ApiInformations {
   apiInformations: string[];
 }
@@ -70,68 +66,64 @@ function MainCentral({ apiInformations }: ApiInformations) {
   };
 
   return (
-    <>
-      <Grid container>
-        <Grid item xs={12} mb={12} ml={2}>
-          <Box>
-            <Typography
-              sx={{ color: "#111820" }}
-              mt={8}
-              className={openSansExtraBold.className}
-              variant="h2"
-            >
-              {apiInformations[5]}
-            </Typography>
-          </Box>
-          <Box>
-            <Typography
-              sx={{ color: "#111820" }}
-              className={openSansExtraBold.className}
-              variant="h6"
-            >
-              {apiInformations[6]}
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            display: "flex",
-            margin: "auto",
-            boxSizing: "border-box",
-            position: "relative",
-            width: "55%",
-            height: "115px",
-            background: "#242424",
-            border: "1px solid #FFFFFF",
-            borderRadius: "12px",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 10,
-          }}
-        >
-          {Object.keys(updatedInformacoes).map((key) => (
-            <>
-              <Box>
-                <Image
-                  src={updatedInformacoes[key].src}
-                  width={30}
-                  height={30}
-                  alt="Picture of the author"
-                />
-                <Typography
-                  className={openSansExtraBold.className}
-                  sx={{ color: "#FFF" }}
-                  variant="subtitle1"
-                >
-                  {updatedInformacoes[key].tipografia}
-                </Typography>
-              </Box>
-            </>
-          ))}
-        </Grid>
+    <Grid container>
+      <Grid item xs={12} mb={12} ml={2}>
+        <Box>
+          <Typography
+            sx={{ color: "#111820" }}
+            mt={8}
+            className={openSansExtraBold.className}
+            variant="h2"
+          >
+            {apiInformations[5]}
+          </Typography>
+        </Box>
+        <Box>
+          <Typography
+            sx={{ color: "#111820" }}
+            className={openSansExtraBold.className}
+            variant="h6"
+          >
+            {apiInformations[6]}
+          </Typography>
+        </Box>
       </Grid>
-    </>
+      <Grid
+        item
+        sx={{
+          display: "flex",
+          margin: "auto",
+          boxSizing: "border-box",
+          position: "relative",
+          width: "55%",
+          height: "115px",
+          background: "#242424",
+          border: "1px solid #FFFFFF",
+          borderRadius: "12px",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 10,
+        }}
+      >
+        {Object.keys(updatedInformacoes).map((key) => (
+          <Box key={""}>
+            <Image
+              src={updatedInformacoes[key].src}
+              width={30}
+              height={30}
+              alt="Picture of the author"
+            />
+            <Typography
+              className={openSansExtraBold.className}
+              sx={{ color: "#FFF" }}
+              variant="subtitle1"
+            >
+              {updatedInformacoes[key].tipografia}
+            </Typography>
+          </Box>
+        ))}
+      </Grid>
+    </Grid>
   );
 }
 export default MainCentral;
