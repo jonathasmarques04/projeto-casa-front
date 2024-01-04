@@ -58,7 +58,7 @@ function CardInput({ apiInformations }: ApiInformations) {
     useState<string[]>(apiInformations);
 
   return (
-    <Card sx={{ maxWidth: 350, margin: "auto" }}>
+    <Card sx={{ maxWidth: 350, margin: "auto", mb: 8 }}>
       <CardMedia
         sx={{ height: 140 }}
         image={apiInformations[0]}
@@ -70,6 +70,9 @@ function CardInput({ apiInformations }: ApiInformations) {
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {apiInformations[1]}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {apiInformations[3]}
         </Typography>
       </CardContent>
       <CardActions>
