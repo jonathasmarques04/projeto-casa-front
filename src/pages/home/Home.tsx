@@ -6,30 +6,15 @@ import Header from "./components/Header";
 import CardInput, { fetchCard } from "./components/Card";
 
 import Footer from "./components/Footer";
-import { useRouter } from "next/router";
 
 function Home() {
   const [apiCard, setApiCard] = useState<string[]>([]);
-  const [filteredCard, setFilteredCard] = useState<string[]>([]);
-  const router = useRouter();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchCard("62");
-      setApiCard(data);
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const filteredProducts = apiCard.filter((product) => {
-      const parsedProduct = JSON.parse(product);
-      return parsedProduct.idProduto === 62;
+    fetchCard("62").then((informacoes) => {
+      setApiCard(informacoes);
     });
-
-    setFilteredCard(filteredProducts);
-  }, [apiCard]);
+  }, []);
 
   return (
     <>
