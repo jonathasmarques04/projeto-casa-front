@@ -13,6 +13,7 @@ const openSansExtraBold = localFont({
 });
 
 interface Produto {
+  imagem: string;
   suites: string;
   areaUtil: string;
   areaTotal: string;
@@ -38,6 +39,7 @@ export async function fetchCard(param: string): Promise<string[]> {
     const produtos: Produto = data.produto;
 
     const information: string[] = [
+      produtos.imagem,
       produtos.suites,
       produtos.areaUtil,
       produtos.areaTotal,
@@ -59,15 +61,15 @@ function CardInput({ apiInformations }: ApiInformations) {
     <Card sx={{ maxWidth: 350, margin: "auto" }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/300849399_1378995459293714_446150436152832763_n.jpg"
+        image={apiInformations[0]}
         title="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-          {apiInformations[3]}
+          {apiInformations[4]}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {apiInformations[0]}
+          {apiInformations[1]}
         </Typography>
       </CardContent>
       <CardActions>
