@@ -58,7 +58,7 @@ function CardInput({ apiInformations }: ApiInformations) {
     useState<string[]>(apiInformations);
 
   return (
-    <Card sx={{ maxWidth: 350, margin: "auto", mb: 8 }}>
+    <Card sx={{ maxWidth: 350, borderRadius: 4 , margin: "auto", mb: 8, boxShadow: 'gray'}}>
       <CardMedia
         sx={{ height: 140 }}
         image={apiInformations[0]}
@@ -75,11 +75,6 @@ function CardInput({ apiInformations }: ApiInformations) {
           {apiInformations[3]}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small" color="error">
-          Ver mais
-        </Button>
-      </CardActions>
     </Card>
   );
 }
