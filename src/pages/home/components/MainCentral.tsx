@@ -3,27 +3,44 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import localFont from "@next/font/local";
 import { sxButtonMaior } from "./style";
-import { useState } from "react";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
 });
 
-const informacoes: { [key: string]: { src: string; tipografia: string } } = {
+const informacoesPrincipal: { [key: string]: { src: string; tipografia: string } } = {
   informacoes1: {
     src: "/conforto.svg",
     tipografia:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nobis consectetur tempora illo ipsam enim dolor hic a iure, fugiat dolorem, temporibus ex, at itaque praesentium ad rem eos recusandae!",
+      "Acreditamos que a qualidade de vida de nossos clientes está diretamente ligada com o conforto que nossos empreendimentos oferecem. Por isso, procuramos alinhar o design ao melhor conforto térmico, acústico e ambiental, sem perder a praticidade de ambientes personalizados e adequados aos diferentes estilos de vida",
   },
   informacoes2: {
     src: "/tecnologia.svg",
     tipografia:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nobis consectetur tempora illo ipsam enim dolor hic a iure, fugiat dolorem, temporibus ex, at itaque praesentium ad rem eos recusandae!",
+      "Somos uma construtora jovem (ou uma jovem construtora?!). Por isso, acreditamos em métodos construtivos tecnológicos, modernos e eficientes, com a melhor relação custo x benefício, além de oferecemos aos nossos clientes soluções de tecnologia e automação convergentes com os seus propósitos.",
   },
   informacoes3: {
     src: "/personalizacao.svg",
     tipografia:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nobis consectetur tempora illo ipsam enim dolor hic a iure, fugiat dolorem, temporibus ex, at itaque praesentium ad rem eos recusandae!",
+      "Compreendemos que os nossos empreendimentos são parte importante da vida de nossos clientes, e, por isso, devem estar alinhados com a personalidade e as necessidades diárias de cada um deles. Assim, primamos pela adaptabilidade dos nossos projetos, com a confecção de plantas personalizáveis e soluções arquitetônicas individualizadas, dispensando a realização de obras posteriores ao recebimento do imóvel.",
+  },
+};
+
+const informacoesSecundario: { [key: string]: { src: string; tipografia: string } } = {
+  informacoes1: {
+    src: "/conforto.svg",
+    tipografia:
+      "Realizamos reformas dos mais variados portes, por meio de equipe especializada e supervisionada por arquitetos e engenheiros. Os trabalhos são realizados de acordo com projeto idealizado em BIM (Building Information Modeling), capaz de antecipar, a partir das características físicas e funcionais da obra, o quantitativo de materiais e custos diretos e indiretos envolvidos. ",
+  },
+  informacoes2: {
+    src: "/tecnologia.svg",
+    tipografia:
+      "Somos especialistas em construção! Sabemos que construir não é uma tarefa fácil. Por isso, estamos aqui para assumir essa tarefa por você. Contamos com um time técnico de engenheiros, arquitetos e construtores que atuam desde a concepção do projeto até a conclusão das obras, no modelo de empreitada ou administração.",
+  },
+  informacoes3: {
+    src: "/personalizacao.svg",
+    tipografia:
+      "O mercado imobiliário é historicamente reconhecido como uma alternativa segura, estável e altamente rentável de investimento. Os maiores investidores do mundo possuem boa parte do seu patrimônio alocado em imóveis. Seja você também um investidor do mercado imobiliário com a Ca.Sa Construtora!",
   },
 };
 
@@ -53,18 +70,18 @@ function MainCentral() {
         xs={12}
         sx={{ textAlign: "center" }}
       >
-        {Object.keys(informacoes).map((key) => (
+        {Object.keys(informacoesPrincipal).map((key) => (
           <Grid xs={3} key={key} item sx={{ margin: "auto" }}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Image
-                src={informacoes[key].src}
+                src={informacoesPrincipal[key].src}
                 width={120}
                 height={120}
                 alt="Picture of the author"
               />
             </Box>
             <Typography variant="caption">
-              {informacoes[key].tipografia}
+              {informacoesPrincipal[key].tipografia}
             </Typography>
           </Grid>
         ))}
@@ -87,18 +104,18 @@ function MainCentral() {
         xs={12}
         sx={{ textAlign: "center" }}
       >
-        {Object.keys(informacoes).map((key) => (
+        {Object.keys(informacoesSecundario).map((key) => (
           <Grid xs={3} key={key} item sx={{ margin: "auto" }}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Image
-                src={informacoes[key].src}
+                src={informacoesSecundario[key].src}
                 width={120}
                 height={120}
                 alt="Picture of the author"
               />
             </Box>
             <Typography variant="caption">
-              {informacoes[key].tipografia}
+              {informacoesSecundario[key].tipografia}
             </Typography>
           </Grid>
         ))}
@@ -106,4 +123,5 @@ function MainCentral() {
     </Grid>
   );
 }
+
 export default MainCentral;

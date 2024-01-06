@@ -17,7 +17,7 @@ interface Usuario {
 }
 
 interface Login {
-  usuario: Usuario;
+  usuarios: Usuario[];
 }
 
 export async function PegaUsuario() {
@@ -29,6 +29,7 @@ export async function PegaUsuario() {
     }
 
     const data = await response.json();
+    
     console.log(data);
   } catch (error) {
     console.error("Erro ao buscar informações da API:", error);
@@ -36,27 +37,28 @@ export async function PegaUsuario() {
   }
 }
 
+PegaUsuario()
+
 export default function SignIn() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const response = await fetch(`http://localhost:3020/usuario/`);
-    if (!response.ok) {
-      throw new Error("Erro ao pegar dados");
-    }
     const data = new FormData(event.currentTarget);
-
-    const json: Usuario = await response.json();
-
-    const usuario: Usuario = {
-      nome: data.get("email") as string,
-      senha: data.get("password") as string,
-    };
-
-    if (usuario.nome === json.nome && usuario.senha === json.senha) {
-      console.log("Logado com sucesso");
+    const response = {
+      email: data.get('email'),
+      senha: data.get('password')
     }
+    
 
-    return (
+    if(response.email === 'jonathas' && response.senha === 'lindo'){
+      console.log('Login efetuado com sucesso')
+    }
+    else{
+      console.log('Erro no login0')
+    }
+  };
+
+
+  return(
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -113,6 +115,6 @@ export default function SignIn() {
           </Box>
         </Container>
       </ThemeProvider>
-    );
-  };
+    )
 }
+

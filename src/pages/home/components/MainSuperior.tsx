@@ -20,8 +20,12 @@ function MainSuperior() {
             Um novo jeito de construir
           </Typography>
           <Typography variant="inherit" className={openSansExtraBold.className}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit
+            Nossos projetos são baseados em criatividade, inovação,
+            funcionalidade e funcionalidade. Ao integrar esses princípios,
+            reforçamos nosso compromisso com práticas construtivas responsáveis,
+            promovendo soluções arquitetônicas que atendam às necessidades dos
+            clientes e contribuam para um ambiente mais sustentável, eficiente e
+            socialmente adequado.
           </Typography>
         </Grid>
         <Grid item xs={6}>
