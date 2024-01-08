@@ -8,6 +8,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Administracao from "@/pages/administracao/Administracao";
+import { redirect } from "next/dist/server/api-utils";
+import { url } from "inspector";
 
 const defaultTheme = createTheme();
 
@@ -20,7 +23,7 @@ interface Login {
   usuarios: Usuario[];
 }
 
-export async function PegaUsuario() {
+export async function PegaUsuario(nome: string, password: string) {
   try {
     const response = await fetch(`http://localhost:3020/usuario/`);
 
@@ -28,16 +31,25 @@ export async function PegaUsuario() {
       throw new Error("Erro ao pegar dados");
     }
 
-    const data = await response.json();
-    
-    console.log(data);
+    const data: Login = await response.json();
+
+    if (data.usuarios.length >= 3) {
+      const resposta = {
+        nome: data.usuarios[2].nome,
+      };
+
+      console.log("Nome do usuário encontrado:", resposta.nome);
+      return resposta.nome;
+    } else {
+      console.log("Número insuficiente de usuários na resposta da API");
+      return null;
+    }
+
   } catch (error) {
     console.error("Erro ao buscar informações da API:", error);
     return [];
   }
 }
-
-PegaUsuario()
 
 export default function SignIn() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -48,12 +60,11 @@ export default function SignIn() {
       senha: data.get('password')
     }
     
-
     if(response.email === 'jonathas' && response.senha === 'lindo'){
       console.log('Login efetuado com sucesso')
     }
     else{
-      console.log('Erro no login0')
+      console.log('Erro no login')
     }
   };
 
