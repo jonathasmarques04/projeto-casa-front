@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import MainInput from "./components/MainInput";
 import Header from "./components/Header";
 import CardInput, { fetchCard } from "./components/Card";
+import { AuthProvider } from "../../contexts/AuthContext";
 
 import Footer from "./components/Footer";
 
@@ -17,14 +18,14 @@ function Home() {
   }, []);
 
   return (
-    <>
+    <AuthProvider>
       <Header />
       <MainSuperior />
       <MainCentral />
       <MainInput />
       <CardInput apiInformations={apiCard} />
       <Footer />
-    </>
+    </AuthProvider>
   );
 }
 export default Home;

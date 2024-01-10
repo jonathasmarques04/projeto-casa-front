@@ -8,9 +8,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Administracao from "@/pages/administracao/Administracao";
-import { redirect } from "next/dist/server/api-utils";
-import { url } from "inspector";
+import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 const defaultTheme = createTheme();
 
@@ -23,109 +23,72 @@ interface Login {
   usuarios: Usuario[];
 }
 
-export async function PegaUsuario(nome: string, password: string) {
-  try {
-    const response = await fetch(`http://localhost:3020/usuario/`);
+export default function Login() {
+  const { register, handleSubmit } = useForm();
+  const { sigIn } = useContext(AuthContext);
 
-    if (!response.ok) {
-      throw new Error("Erro ao pegar dados");
-    }
-
-    const data: Login = await response.json();
-
-    if (data.usuarios.length >= 3) {
-      const resposta = {
-        nome: data.usuarios[2].nome,
-      };
-
-      console.log("Nome do usuário encontrado:", resposta.nome);
-      return resposta.nome;
-    } else {
-      console.log("Número insuficiente de usuários na resposta da API");
-      return null;
-    }
-
-  } catch (error) {
-    console.error("Erro ao buscar informações da API:", error);
-    return [];
+  async function handleSigIn(data: any) {
+    await sigIn(data);
   }
-}
 
-export default function SignIn() {
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const response = {
-      email: data.get('email'),
-      senha: data.get('password')
-    }
-    
-    if(response.email === 'jonathas' && response.senha === 'lindo'){
-      console.log('Login efetuado com sucesso')
-    }
-    else{
-      console.log('Erro no login')
-    }
-  };
-
-
-  return(
-      <ThemeProvider theme={defaultTheme}>
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: "#FF2700" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Login
+          </Typography>
           <Box
-            sx={{
-              marginTop: 8,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
+            component="form"
+            onSubmit={handleSubmit(handleSigIn)}
+            noValidate
+            sx={{ mt: 1 }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "#FF2700" }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Login
-            </Typography>
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              noValidate
-              sx={{ mt: 1 }}
+            <TextField
+              {...register("email")}
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Usuário"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              {...register("password")}
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Senha"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              color="error"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
             >
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Usuário"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Senha"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <Button
-                type="submit"
-                color="error"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-            </Box>
+              Sign In
+            </Button>
           </Box>
-        </Container>
-      </ThemeProvider>
-    )
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
 }
-
