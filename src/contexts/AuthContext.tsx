@@ -1,43 +1,62 @@
-import { signInRequest } from "@/services/auth";
-import { createContext, useState } from "react";
-import { setCookie } from "nookies";
+import { createContext, useEffect, useState } from "react";
+import { setCookie, parseCookies } from "nookies";
 import Router from "next/router";
+
+import { recoverUserInformation, signInRequest } from "../services/auth";
+import { api } from "../services/api";
+
+type User = {
+  email: string;
+  password: string;
+};
+
+type SignInData = {
+  email: string;
+  password: string;
+};
 
 type AuthContextType = {
   isAuthenticated: boolean;
-  user: isAuthenticatedType | null;
-  sigIn: (data: isAuthenticatedType) => Promise<void>;
-};
-
-type isAuthenticatedType = {
-  email: string;
-  password: string;
+  user: User | null;
+  signIn: (data: SignInData) => Promise<void>;
 };
 
 export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<isAuthenticatedType | null>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   const isAuthenticated = !!user;
 
-  async function sigIn({ email, password }: isAuthenticatedType) {
+  useEffect(() => {
+    const { "nextauth.token": token } = parseCookies();
+
+    if (token) {
+      recoverUserInformation().then((response) => {
+        setUser(response.user);
+      });
+    }
+  }, []);
+
+  async function signIn({ email, password }: SignInData) {
     const { token, user } = await signInRequest({
       email,
-      password: password,
+      password,
     });
 
     setCookie(undefined, "nextauth.token", token, {
-      maxAge: 60 * 60 * 1,
+      maxAge: 60 * 60 * 1, // 1 hour
     });
+
+    api.defaults.headers["Authorization"] = `Bearer ${token}`;
 
     setUser(user);
 
-    Router.push("/administracao");
+    Router.push("/home");
   }
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, sigIn }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, signIn }}>
       {children}
     </AuthContext.Provider>
   );

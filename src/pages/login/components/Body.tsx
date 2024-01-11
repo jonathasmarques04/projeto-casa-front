@@ -15,8 +15,8 @@ import { AuthContext } from "../../../contexts/AuthContext";
 const defaultTheme = createTheme();
 
 interface Usuario {
-  nome: string;
-  senha: string;
+  email: string;
+  password: string;
 }
 
 interface Login {
@@ -25,10 +25,10 @@ interface Login {
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
-  const { sigIn } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
 
-  async function handleSigIn(data: any) {
-    await sigIn(data);
+  async function handleSignIn(data: any) {
+    await signIn(data);
   }
 
   return (
@@ -51,7 +51,7 @@ export default function Login() {
           </Typography>
           <Box
             component="form"
-            onSubmit={handleSubmit(handleSigIn)}
+            onSubmit={handleSubmit(handleSignIn)}
             noValidate
             sx={{ mt: 1 }}
           >

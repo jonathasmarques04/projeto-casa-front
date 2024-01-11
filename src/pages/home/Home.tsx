@@ -5,6 +5,7 @@ import MainInput from "./components/MainInput";
 import Header from "./components/Header";
 import CardInput, { fetchCard } from "./components/Card";
 import { AuthProvider } from "../../contexts/AuthContext";
+import { api } from "../../services/api";
 
 import Footer from "./components/Footer";
 
@@ -15,6 +16,10 @@ function Home() {
     fetchCard("62").then((informacoes) => {
       setApiCard(informacoes);
     });
+  }, []);
+
+  useEffect(() => {
+    api.get("/usuarios");
   }, []);
 
   return (
