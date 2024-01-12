@@ -18,10 +18,6 @@ function Home() {
     });
   }, []);
 
-  useEffect(() => {
-    api.get("/usuarios");
-  }, []);
-
   return (
     <AuthProvider>
       <Header />

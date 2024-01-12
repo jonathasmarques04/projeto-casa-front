@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     setUser(user);
 
-    Router.push("/home");
+    Router.push("/administracao");
   }
 
   return (

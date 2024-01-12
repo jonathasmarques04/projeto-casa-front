@@ -6,10 +6,10 @@ import { AuthProvider } from "@/contexts";
 
 function Login() {
   return (
-    <AuthProvider>
+    <>
       <Header />
       <SignIn />
-    </AuthProvider>
+    </>
   );
 }
 export default Login;
