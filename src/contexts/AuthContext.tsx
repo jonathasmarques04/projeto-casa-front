@@ -48,6 +48,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       maxAge: 60 * 60 * 1, // 1 hour
     });
 
+    const response = await api.post("/login", { email, password });
+
+    if (response.data.success) {
+      Router.push("/administracao");
+    } else {
+      console.log("Login inválido. Verifique suas credenciais.");
+    }
+
     api.defaults.headers["Authorization"] = `Bearer ${token}`;
 
     setUser(user);
