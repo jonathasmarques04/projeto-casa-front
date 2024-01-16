@@ -1,1 +1,1 @@
-export { default } from './Administracao'
+export { default, getServerSideProps } from "./Administracao";

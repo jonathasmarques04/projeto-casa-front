@@ -14,6 +14,11 @@ import { AuthContext } from "../../../contexts/AuthContext";
 
 const defaultTheme = createTheme();
 
+type SignInFormData = {
+  email: string;
+  password: string;
+};
+
 interface Usuario {
   email: string;
   password: string;
@@ -27,7 +32,7 @@ export default function Login() {
   const { register, handleSubmit } = useForm();
   const { signIn } = useContext(AuthContext);
 
-  async function handleSignIn(data: any) {
+  async function handleSignIn(data?: any) {
     await signIn(data);
   }
 
