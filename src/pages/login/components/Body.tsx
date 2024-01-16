@@ -14,11 +14,6 @@ import { AuthContext } from "../../../contexts/AuthContext";
 
 const defaultTheme = createTheme();
 
-type SignInFormData = {
-  email: string;
-  password: string;
-};
-
 interface Usuario {
   email: string;
   password: string;
