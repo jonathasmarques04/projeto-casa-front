@@ -50,7 +50,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const response = await api.post("/login", { email, password });
 
-    if (response.data.success) {
+    if (response.data == 'Email válido') {
       Router.push("/administracao");
     } else {
       console.log("Login inválido. Verifique suas credenciais.");
@@ -59,8 +59,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     api.defaults.headers["Authorization"] = `Bearer ${token}`;
 
     setUser(user);
-
-    Router.push("/administracao");
   }
 
   return (

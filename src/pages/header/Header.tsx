@@ -5,22 +5,18 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
 import Image from "next/image";
-import localFont from "next/font/local";
-import { sxButtonHeader } from "./style";
+import localFont from 'next/font/local'
 import { Grid } from "@mui/material";
 
 const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
+  src: "../../../public/Causten-Regular.otf",
 });
-
-const fonte = localFont({ src: "../../../../public/Causten-Regular.otf" });
 
 const pages = [
   "Quem somos",
@@ -43,17 +39,12 @@ function Header() {
   };
 
   return (
-    <Grid
-      container
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        margin: "auto",
-        flexWrap: "nowrap",
-        flexDirection: "column",
-        width: "90%",
-      }}
-    >
+    <Grid container sx={{ display: "flex",
+    justifyContent: "space-between",
+    margin: 'auto',
+    flexWrap: 'nowrap',
+    flexDirection: 'column',
+    width: '90%' }}>
       <Toolbar disableGutters sx={{ gap: 12 }}>
         <Typography
           variant="h6"
@@ -108,8 +99,7 @@ function Header() {
           >
             {pages.map((page) => (
               <MenuItem
-                className={fonte.className}
-                sx={{ fontWeight: '500' }}
+                className={openSansExtraBold.className}
                 key={page}
                 onClick={handleCloseNavMenu}
               >
@@ -143,13 +133,13 @@ function Header() {
             alt="Picture of the author"
           />
         </Typography>
-        <Box sx={{ flexGrow: 1, gap: 8, display: { xs: "none", md: "flex" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pages.map((page) => (
             <Button
               className={openSansExtraBold.className}
               key={page}
               onClick={handleCloseNavMenu}
-              sx={{ color: "#000", display: "block", fontWeight: 'bold', lineHeight: 'normal', fontSize: '16px'}}
+              sx={{ color: "black", display: "block", fontWeight: 500 }}
             >
               {page}
             </Button>
@@ -157,7 +147,7 @@ function Header() {
         </Box>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Fale conosco">
-            <Button sx={sxButtonHeader} disableElevation variant="contained">
+            <Button disableElevation variant="contained">
               Fale conosco
             </Button>
           </Tooltip>

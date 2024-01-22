@@ -7,12 +7,14 @@ import CardMedia from "@mui/material/CardMedia";
 import localFont from "@next/font/local";
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
 });
 
 interface Produto {
+  idProduto: string;
   imagem: string;
   suites: string;
   areaUtil: string;
@@ -39,6 +41,7 @@ export async function fetchCard(param: string): Promise<string[]> {
     const produtos: Produto = data.produto;
 
     const information: string[] = [
+      produtos.idProduto,
       produtos.imagem,
       produtos.suites,
       produtos.areaUtil,
@@ -58,24 +61,26 @@ function CardInput({ apiInformations }: ApiInformations) {
     useState<string[]>(apiInformations);
 
   return (
+    <Link to={`/livro/${apiInformations[0]}`} style={{ textDecoration: "none" }}>
     <Card sx={{ maxWidth: 350, borderRadius: 4 , margin: "auto", mb: 8, boxShadow: 'gray'}}>
       <CardMedia
         sx={{ height: 140 }}
-        image={apiInformations[0]}
+        image={apiInformations[1]}
         title="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
+          {apiInformations[5]}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {apiInformations[2]}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
           {apiInformations[4]}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {apiInformations[1]}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {apiInformations[3]}
         </Typography>
       </CardContent>
     </Card>
+    </Link>
   );
 }
 export default CardInput;

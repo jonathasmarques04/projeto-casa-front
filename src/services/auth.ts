@@ -30,14 +30,3 @@ export async function recoverUserInformation() {
     },
   };
 }
-
-// const response = await fetch(`http://localhost:3020/usuario/`);
-
-//   if (!response.ok) {
-//     throw new Error("Erro ao pegar dados");
-//   }
-
-//   const resposta: Login = await response.json();
-
-//   const email = resposta.usuarios[2].nome;
-//   const senha = resposta.usuarios[2].senha;

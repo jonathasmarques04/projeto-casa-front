@@ -56,7 +56,7 @@ function MainCentral() {
         >
           CONHEÇA A CASA
         </Button>
-        <Typography variant="h6" m={"auto"} my={4} sx={{ width: "90%" }}>
+        <Typography variant="h6" m={"auto"} my={4} sx={{ width: "90%", color: '#111820', fontSize: '2.5vh' }}>
           A <span style={{ color: "#FF2700" }}>Construtora Carvalho de Sá</span>{" "}
           nasce da ideia de trazer uma nova forma de criar e gerenciar
           construções, com o foco familiar, moderno, simples e tecnológico.
@@ -80,9 +80,12 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Typography variant="caption">
+            <Box sx={{ maxHeight: '5em' }}>
+            <Typography variant="caption" sx={{ color: '#111820', width: '50%' }}>
               {informacoesPrincipal[key].tipografia}
             </Typography>
+            </Box>
+            
           </Grid>
         ))}
       </Grid>
@@ -114,7 +117,8 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Typography variant="caption">
+            <Box></Box>
+            <Typography variant="caption" sx={{ color: '#111820' }}>
               {informacoesSecundario[key].tipografia}
             </Typography>
           </Grid>

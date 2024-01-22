@@ -16,10 +16,11 @@ function MainSuperior() {
             variant="h1"
             color="#FF2700"
             className={openSansExtraBold.className}
+            sx={{ fontWeight: 'bold' }}
           >
             Um novo jeito de construir
           </Typography>
-          <Typography variant="inherit" className={openSansExtraBold.className}>
+          <Typography variant="inherit" className={openSansExtraBold.className} sx={{ letterSpacing: '-0.02em', fontWeight: 'bold', fontSize: '18px' }}>
             Nossos projetos são baseados em criatividade, inovação,
             funcionalidade e funcionalidade. Ao integrar esses princípios,
             reforçamos nosso compromisso com práticas construtivas responsáveis,
