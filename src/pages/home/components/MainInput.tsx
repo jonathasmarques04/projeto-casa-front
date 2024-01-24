@@ -89,6 +89,7 @@ function InputMain() {
           color="error"
           variant="contained"
           sx={sxButtonMaior}
+          className={openSansExtraBold.className}
         >
           IMÓVEIS À VENDA
         </Button>

@@ -46,13 +46,15 @@ const informacoesSecundario: { [key: string]: { src: string; tipografia: string 
 
 function MainCentral() {
   return (
-    <Grid container xs={12} className={openSansExtraBold.className}>
+    <Grid container xs={12} >
       <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
         <Button
+          id="conheca"
           disableElevation
           color="error"
           variant="contained"
           sx={sxButtonMaior}
+          className={openSansExtraBold.className}
         >
           CONHEÇA A CASA
         </Button>
@@ -95,6 +97,7 @@ function MainCentral() {
           color="error"
           variant="contained"
           sx={sxButtonMaior}
+          className={openSansExtraBold.className}
         >
           O QUE FAZEMOS?
         </Button>

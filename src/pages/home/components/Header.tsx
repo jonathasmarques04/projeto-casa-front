@@ -157,7 +157,7 @@ function Header() {
         </Box>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Fale conosco">
-            <Button sx={sxButtonHeader} disableElevation variant="contained">
+            <Button sx={sxButtonHeader} className={openSansExtraBold.className} disableElevation variant="contained">
               Fale conosco
             </Button>
           </Tooltip>

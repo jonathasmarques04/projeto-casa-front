@@ -30,7 +30,7 @@ export const sxButtonHeader: SxProps<Theme> = {
   textTransform: "uppercase",
   outline: "none",
   border: "none",
-  height: "8vh",
+  height: "6vh",
   fontSize: 16,
   "&:hover": {
     backgroundColor: "#FF2700",
@@ -46,13 +46,13 @@ export const sxButtonMaior: SxProps<Theme> = {
   borderRadius: "5px",
   boxShadow: "0px 10.0979px 10.0979px rgba(255, 39, 0, 0.2)",
   cursor: "auto",
-  fontweight: 400,
   texttransform: "uppercase",
   outline: "none",
   border: "none",
   height: "8.0vh",
   width: "90%",
   fontWeight: "bold",
+  fontSize: '1.3rem'
 };
 
 export const sxInput: SxProps<Theme> = {

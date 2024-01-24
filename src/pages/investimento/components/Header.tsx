@@ -13,17 +13,11 @@ import AdbIcon from "@mui/icons-material/Adb";
 import Image from "next/image";
 import localFont from 'next/font/local'
 import { Grid } from "@mui/material";
+import { sxButtonHeader } from "@/pages/home/components/style";
 
 const openSansExtraBold = localFont({
-  src: "../../../public/Causten-Regular.otf",
+  src: "../../../../public/Causten-Regular.otf",
 });
-
-const pages = [
-  "Quem somos",
-  "O que fazemos",
-  "Quero Investir",
-  "Imóveis à venda",
-];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -97,15 +91,7 @@ function Header() {
               display: { xs: "block", color: "white", md: "none" },
             }}
           >
-            {pages.map((page) => (
-              <MenuItem
-                className={openSansExtraBold.className}
-                key={page}
-                onClick={handleCloseNavMenu}
-              >
-                <Typography textAlign="center">{page}</Typography>
-              </MenuItem>
-            ))}
+            
           </Menu>
         </Box>
         <AdbIcon
@@ -134,20 +120,10 @@ function Header() {
           />
         </Typography>
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-          {pages.map((page) => (
-            <Button
-              className={openSansExtraBold.className}
-              key={page}
-              onClick={handleCloseNavMenu}
-              sx={{ color: "black", display: "block", fontWeight: 500 }}
-            >
-              {page}
-            </Button>
-          ))}
         </Box>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Fale conosco">
-            <Button disableElevation variant="contained">
+          <Button sx={sxButtonHeader} className={openSansExtraBold.className} disableElevation variant="contained">
               Fale conosco
             </Button>
           </Tooltip>
