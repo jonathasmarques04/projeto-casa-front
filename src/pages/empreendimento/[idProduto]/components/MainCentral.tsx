@@ -58,17 +58,17 @@ function MainCentral({ apiInformations }: ApiInformations) {
   const updatedInformacoes: {
     [key: string]: { src: string; tipografia: string };
   } = {
-    informacoes1: { src: "/informacoes-1.svg", tipografia: apiInformations[0] },
-    informacoes2: { src: "/informacoes-2.svg", tipografia: apiInformations[1] },
-    informacoes3: { src: "/informacoes-3.svg", tipografia: apiInformations[2] },
-    informacoes4: { src: "/informacoes-4.svg", tipografia: apiInformations[3] },
-    informacoes5: { src: "/informacoes-5.svg", tipografia: apiInformations[4] },
+    informacoes1: { src: "/informacoes-1.svg", tipografia: `${apiInformations[0]} quartos` },
+    informacoes2: { src: "/informacoes-2.svg", tipografia: `${apiInformations[1]} suítes` },
+    informacoes3: { src: "/informacoes-3.svg", tipografia: `${apiInformations[2]} banheiros`},
+    informacoes4: { src: "/informacoes-4.svg", tipografia: `${apiInformations[3]}m² A. Útil` },
+    informacoes5: { src: "/informacoes-5.svg", tipografia: `${apiInformations[4]}m² A. Total` },
   };
 
   return (
     <Grid container>
-      <Grid item xs={12} mb={12} ml={2}>
-        <Box>
+      <Grid item xs={12} mb={12} ml={12}>
+        <Box >
           <Typography
             sx={{ color: "#111820" }}
             mt={8}

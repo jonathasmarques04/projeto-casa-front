@@ -102,6 +102,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
                   width={500}
                   height={500}
                   alt="Imagem"
+                  style={{ borderRadius: '25px' }}
                 />
               </Grid>
             </Slide>

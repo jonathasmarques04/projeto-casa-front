@@ -40,3 +40,23 @@ export const sxListStyle: SxProps<Theme> = {
   color: "#111820",
   textTransform: "none",
 };
+
+
+export const sxButtonHeader: SxProps<Theme> = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  color: "#fff",
+  backgroundColor: "#FF2700",
+  borderRadius: "10px",
+  boxShadow: "0px 10.0979px 10.0979px rgba(255, 39, 0, 0.2)",
+  cursor: "pointer",
+  textTransform: "uppercase",
+  outline: "none",
+  border: "none",
+  height: "6vh",
+  fontSize: 16,
+  "&:hover": {
+    backgroundColor: "#FF2700",
+  },
+};

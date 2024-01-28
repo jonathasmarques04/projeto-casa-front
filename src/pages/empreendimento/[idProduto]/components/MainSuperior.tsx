@@ -52,8 +52,8 @@ function MainSuperior({ apiInformations }: ApiInformations) {
     <Grid container>
       <Grid
         item
-        mr={2}
-        ml={2}
+        mr={12}
+        ml={12}
         xs={12}
         sx={{
           borderRadius: "15px",
@@ -98,12 +98,12 @@ function MainSuperior({ apiInformations }: ApiInformations) {
         >
           <Image
             src="/vetor.svg"
-            width={30}
-            height={30}
+            width={25}
+            height={25}
             alt="Picture of the author"
           />
-          <Typography sx={{ color: "#111820" }} variant="h6">
-            Belo Horizonte
+          <Typography className={openSansExtraBold.className} sx={{ color: "#111820" }} variant="h6">
+            {apiInformations[2]}
           </Typography>
         </Box>
       </Grid>
