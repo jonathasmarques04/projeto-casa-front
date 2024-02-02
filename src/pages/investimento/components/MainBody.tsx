@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import localFont from "@next/font/local";
 import Image from "next/image";
-import { sxGridContainerFade } from "./styles";
+import { styleGrayBox, styleTypography, sxGridContainerFade } from "./styles";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
@@ -109,24 +109,25 @@ function MainBody() {
           </Box>
           <Box sx={{ margin: "auto" }}>
             <Image
-              src="/imagem-mao-segurando-casa.svg"
+              src="/financiamento.svg"
               width={100}
               height={100}
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={{ margin: "auto", ml: 10, width: "80%" }}>
-            <Typography variant="h4" color={"white"}>
+          <Box sx={styleGrayBox}>
+            <Typography sx={styleTypography} variant="h4" color={"white"}>
               {informacoes[1].titulo}
             </Typography>
-            <Typography variant="subtitle1" color={"white"}>
+            <Typography sx={styleTypography} variant="subtitle1" color={"white"}>
               {informacoes[1].descricao}
             </Typography>
             <Button
               color="inherit"
               className={openSansExtraBold.className}
-              sx={{ color: "#FF2700", mt: 2 }}
+              sx={{ color: "#FF2700", mt: 2, alignSelf: 'flex-end'}}
               variant="contained"
+              
             >
               Saiba Mais
             </Button>
@@ -159,7 +160,7 @@ function MainBody() {
           </Box>
           <Box sx={{ margin: "auto" }}>
             <Image
-              src="/imagem-mao-segurando-casa.svg"
+              src="/lote-permuta.svg"
               width={100}
               height={100}
               alt="Picture of the author"
@@ -203,23 +204,23 @@ function MainBody() {
           </Box>
           <Box sx={{ margin: "auto" }}>
             <Image
-              src="/imagem-mao-segurando-casa.svg"
+              src="/pig.svg"
               width={100}
               height={100}
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={{ margin: "auto", ml: 10, width: "80%" }}>
-            <Typography variant="h4" color={"white"}>
+          <Box sx={styleGrayBox}>
+            <Typography sx={styleTypography} variant="h4" color={"white"}>
               {informacoes[3].titulo}
             </Typography>
-            <Typography variant="subtitle1" color={"white"}>
+            <Typography sx={styleTypography} variant="subtitle1" color={"white"}>
               {informacoes[3].descricao}
             </Typography>
             <Button
               color="inherit"
               className={openSansExtraBold.className}
-              sx={{ color: "#FF2700", mt: 2, justifyContent: "end" }}
+              sx={{ color: "#FF2700", mt: 2, justifyContent: "end", alignSelf: 'flex-end' }}
               variant="contained"
             >
               Saiba Mais

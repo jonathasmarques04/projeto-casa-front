@@ -1,1 +1,1 @@
-export { default } from '../investimento/components/Header'
+export { default } from './Header'

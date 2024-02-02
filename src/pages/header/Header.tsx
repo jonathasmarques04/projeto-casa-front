@@ -12,11 +12,11 @@ import AdbIcon from "@mui/icons-material/Adb";
 
 import Image from "next/image";
 import localFont from '@next/font/local'
-import { sxButtonHeader } from "./styles";
 import { Grid } from "@mui/material";
+import { sxButtonHeader } from "../home/components/style";
 
 const openSansExtraBold = localFont({
-  src: '../../../../../public/Causten-Regular.otf' 
+  src: '../../../public/Causten-Regular.otf' 
  })
 
 const pages = [
