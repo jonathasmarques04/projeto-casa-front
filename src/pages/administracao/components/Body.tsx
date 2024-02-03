@@ -7,47 +7,69 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface Produto {
+  idProduto: string;
+  titulo: string;
+  areaUtil: string;
   quartos: string;
   suites: string;
   banheiros: string;
-  areaUtil: string;
   areaTotal: string;
-  titulo: string;
+  imagem: string;
+  localizacao: string
 }
 
-interface ApiInformations {
-  apiInformations: string[];
+interface IdProduto {
+  idProduto: number
 }
 
-export async function fetchInformacoesApi(): Promise<string[]> {
-  try {
-    const response = await fetch(`http://localhost:3020/produto/`);
-    if (!response.ok) {
-      throw new Error("Erro na requisição da API");
-    }
-
-    const data = await response.json();
-    const produtos: Produto = data.produto;
-
-    const information: string[] = [
-      produtos.quartos,
-      produtos.banheiros,
-      produtos.suites,
-      produtos.areaUtil,
-      produtos.areaTotal,
-      produtos.titulo,
-    ];
-
-    return information;
-  } catch (error) {
-    console.error("Erro ao buscar informações da API:", error);
-    return [];
-  }
+interface informacoes {
+  produtos: Produto;
 }
 
 function Body() {
+  const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [excluiProduto, deleteProduto] = useState<IdProduto[]>([]);
+
+  useEffect(() => {
+    getProdutos();
+    deleteProdutos()
+  }, []);
+
+  const getProdutos = async () => {
+    try {
+      const response = await fetch(`http://localhost:3020/produto/`);
+      const data = await response.json();
+
+      if (data) {
+        setProdutos(data.produtos);
+      } else {
+        console.log("Ocorreu um erro ao obter os produtos!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteProdutos = async (idProduto: number) => {
+    try {
+      const response = await fetch(`http://localhost:3020/produto/${idProduto}`, { method: 'DELETE' })
+      const data = await response.json()
+
+      if(data){
+        deleteProduto(idProduto)
+      }
+
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+
+
   return (
     <Container>
       <Typography variant="h3">Administração de Produtos</Typography>
@@ -140,39 +162,20 @@ function Body() {
         {/* Tabela de produtos */}
         <Typography variant="h5">Produtos Cadastrados</Typography>
         <TableBody id="tabela-produtos">
-          <TableRow>
-            <TableCell>1</TableCell>
-            <TableCell>Casa aconchegante</TableCell>
-            <TableCell>
-              Uma casa charmosa e confortável para toda a família
-            </TableCell>
-            <TableCell>3</TableCell>
-            <TableCell>1</TableCell>
-            <TableCell>2</TableCell>
-            <TableCell>150m²</TableCell>
-            <TableCell>300m²</TableCell>
-            <TableCell>Localização A</TableCell>
-            <TableCell>
-              <img src="/capturada.png" width={100} height={100} alt="Casa 1" />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>2</TableCell>
-            <TableCell>Apartamento Moderno</TableCell>
-            <TableCell>
-              Um apartamento com design moderno e ótima vista
-            </TableCell>
-            <TableCell>2</TableCell>
-            <TableCell>1</TableCell>
-            <TableCell>1</TableCell>
-            <TableCell>80m²</TableCell>
-            <TableCell>100m²</TableCell>
-            <TableCell>Localização B</TableCell>
-            <TableCell>
-            <img src="/capturada.png" width={100} height={100} alt="Casa 1" />
-            </TableCell>
-          </TableRow>
-          {/* Adicione mais linhas conforme necessário */}
+          {produtos.map((produtos, index) => (
+            <TableRow key={index}>
+              <TableCell>{produtos.idProduto}</TableCell>
+              <TableCell>{produtos.titulo}</TableCell>
+              <TableCell>{produtos.quartos}</TableCell>
+              <TableCell>{produtos.suites}</TableCell>
+              <TableCell>{produtos.banheiros}</TableCell>
+              <TableCell>{produtos.areaUtil}m²</TableCell>
+              <TableCell>{produtos.areaTotal}m²</TableCell>
+              <TableCell>{produtos.localizacao}</TableCell>
+              <TableCell><Image src={produtos.imagem} width={50} height={50} alt="Imagem" /></TableCell>
+            </TableRow>
+          ))}
+         
         </TableBody>
         {/* Formulário de exclusão de produtos */}
         <Typography variant="h5">Excluir Produto</Typography>
@@ -188,7 +191,7 @@ function Body() {
             margin="normal"
             inputProps={{ min: 1 }}
           />
-          <Button variant="contained" color="secondary" type="submit">
+          <Button sx={{ m: "auto", display: "block" }} variant="contained" color="error" type="submit">
             Excluir
           </Button>
         </form>
