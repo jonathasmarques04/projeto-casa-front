@@ -94,35 +94,6 @@ function InputMain() {
           IMÓVEIS À VENDA
         </Button>
       </Grid>
-      <Grid
-        item
-        gap={4}
-        p={8}
-        display="flex"
-        xs={12}
-        sx={{ textAlign: "center" }}
-      >
-        <Grid xs={4} item sx={{ margin: "auto" }}>
-          <FormControl
-            sx={{ m: 0, width: "35ch" }}
-            color="error"
-            variant="outlined"
-          >
-            <InputLabel color="error" htmlFor="outlined-adornment-password">
-              buscar por localidade
-            </InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-password"
-              endAdornment={
-                <InputAdornment position="end">
-                  <SearchIcon color="error" />
-                </InputAdornment>
-              }
-              label="Buscar por localidade"
-            />
-          </FormControl>
-        </Grid>
-      </Grid>
     </Grid>
   );
 }
