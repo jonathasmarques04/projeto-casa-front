@@ -51,10 +51,21 @@ function Header() {
         margin: "auto",
         flexWrap: "nowrap",
         flexDirection: "column",
-        width: "90%",
       }}
+      xs={12}
+      md={10}
     >
-      <Toolbar disableGutters sx={{ gap: 12 }}>
+      <Toolbar
+        sx={{
+          gap: 12,
+          "@media (max-width: 600px)": {
+            gap: 6,
+          },
+          "@media (max-width: 360px)": {
+            gap: 6,
+          },
+        }}
+      >
         <Typography
           variant="h6"
           noWrap
@@ -77,7 +88,7 @@ function Header() {
             alt="Picture of the author"
           />
         </Typography>
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: 12, md: "none" } }}>
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -108,8 +119,8 @@ function Header() {
           >
             {pages.map((page) => (
               <MenuItem
-                className={fonte.className}
-                sx={{ fontWeight: '500' }}
+                className={openSansExtraBold.className}
+                sx={{ fontWeight: "500" }}
                 key={page}
                 onClick={handleCloseNavMenu}
               >
@@ -118,38 +129,56 @@ function Header() {
             ))}
           </Menu>
         </Box>
-        <AdbIcon
-          sx={{ display: { xs: "flex", color: "white", md: "none" }, mr: 1 }}
-        />
-        <Typography
-          variant="h5"
-          noWrap
+
+        <Box
           component="a"
           href="#app-bar-with-responsive-menu"
           sx={{
             display: { xs: "flex", md: "none" },
-            flexGrow: 1,
             fontFamily: "monospace",
             fontWeight: 700,
-            letterSpacing: ".3rem",
             color: "inherit",
             textDecoration: "none",
+            "@media (max-width: 600px)": {
+              width: "60px",
+            },
+            "@media (max-width: 400px)": {
+              width: "40px",
+            },
           }}
         >
           <Image
-            src="/logo.svg"
-            width={120}
-            height={120}
+            src="/logo-unica.svg"
+            width={40}
+            height={40}
             alt="Picture of the author"
           />
-        </Typography>
-        <Box sx={{ flexGrow: 1, gap: 8, display: { xs: "none", md: "flex" } }}>
+        </Box>
+        <Box
+          sx={{
+            flexGrow: 1,
+            gap: 8,
+            display: { xs: "none", md: "flex" },
+          }}
+        >
           {pages.map((page) => (
             <Button
               className={openSansExtraBold.className}
               key={page}
               onClick={handleCloseNavMenu}
-              sx={{ color: "#000", display: "block", fontWeight: 'bold', lineHeight: 'normal', fontSize: '16px'}}
+              sx={{
+                color: "#000",
+                display: "block",
+                fontWeight: "bold",
+                lineHeight: "normal",
+                fontSize: "16px",
+                letterSpacing: "0.1rem",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                "@media (max-width: 600px)": {
+                  fontSize: "10px",
+                },
+              }}
             >
               {page}
             </Button>
@@ -157,7 +186,12 @@ function Header() {
         </Box>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Fale conosco">
-            <Button sx={sxButtonHeader} className={openSansExtraBold.className} disableElevation variant="contained">
+            <Button
+              sx={sxButtonHeader}
+              className={openSansExtraBold.className}
+              disableElevation
+              variant="contained"
+            >
               Fale conosco
             </Button>
           </Tooltip>

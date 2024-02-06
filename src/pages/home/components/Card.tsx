@@ -16,7 +16,6 @@ import CardMedia from "@mui/material/CardMedia";
 import CallIcon from "@mui/icons-material/Call";
 import Popover from "@mui/material/Popover";
 import SearchIcon from "@mui/icons-material/Search";
-import AirlineSeatIndividualSuiteIcon from "@mui/icons-material/AirlineSeatIndividualSuite";
 
 import localFont from "@next/font/local";
 
@@ -35,10 +34,6 @@ interface Produto {
   areaTotal: string;
   titulo: string;
   localizacao: string;
-}
-
-interface ApiResponse {
-  produto: Produto;
 }
 
 interface ApiInformations {
@@ -181,13 +176,13 @@ function CardInput({ apiInformations }: ApiInformations) {
                       <Typography gutterBottom variant="h6" className={openSansExtraBold.className} component="div">
                         {produtos.titulo}
                       </Typography>
-                      <Typography variant="body1" className={openSansExtraBold.className} color="text.secondary">
+                      <Typography variant="body1" className={openSansExtraBold.className} fontWeight={'600'} color="text.secondary">
                         {produtos.suites} { produtos.suites == '1' ? 'suíte' : 'suítes' }
                       </Typography>
                       <Typography variant="body1" className={openSansExtraBold.className} fontWeight={'600'} color="text.secondary">
                         {produtos.areaTotal}m²
                       </Typography>
-                      <Typography variant="body1" className={openSansExtraBold.className} color="text.secondary">
+                      <Typography variant="body1" className={openSansExtraBold.className} fontWeight={'600'} color="text.secondary">
                         {produtos.localizacao}
                       </Typography>
                     </CardContent>
@@ -223,11 +218,11 @@ function CardInput({ apiInformations }: ApiInformations) {
               anchorEl={anchorEl}
               onClose={handleClose}
               anchorOrigin={{
-                vertical: "top", // Mude de 'bottom' para 'top'
+                vertical: "top", 
                 horizontal: "center",
               }}
               transformOrigin={{
-                vertical: "bottom", // Mude de 'top' para 'bottom'
+                vertical: "bottom", 
                 horizontal: "center",
               }}
             >

@@ -120,7 +120,6 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Box></Box>
             <Typography variant="caption" sx={{ color: '#111820' }}>
               {informacoesSecundario[key].tipografia}
             </Typography>

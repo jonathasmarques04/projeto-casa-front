@@ -140,9 +140,9 @@ function Header() {
           }}
         >
           <Image
-            src="/logo.svg"
-            width={120}
-            height={120}
+            src="/logo-unica.svg"
+            width={40}
+            height={40}
             alt="Picture of the author"
           />
         </Box>

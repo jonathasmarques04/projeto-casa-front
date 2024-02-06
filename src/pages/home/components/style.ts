@@ -37,6 +37,7 @@ export const sxButtonHeader: SxProps<Theme> = {
   },
   "@media screen and (max-width: 424px)": {
     fontSize: "10px",
+    height: '50px'
   },
 };
 
