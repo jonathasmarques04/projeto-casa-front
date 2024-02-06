@@ -19,7 +19,7 @@ export const sxButtonStyle: SxProps<Theme> = {
 };
 
 export const sxButtonHeader: SxProps<Theme> = {
-  display: "flex",
+  display: { xs: "flex", sm: "flex" },
   justifyContent: "center",
   alignItems: "center",
   color: "#fff",
@@ -34,6 +34,9 @@ export const sxButtonHeader: SxProps<Theme> = {
   fontSize: 16,
   "&:hover": {
     backgroundColor: "#FF2700",
+  },
+  "@media screen and (max-width: 424px)": {
+    fontSize: "10px",
   },
 };
 
@@ -52,7 +55,7 @@ export const sxButtonMaior: SxProps<Theme> = {
   height: "8.0vh",
   width: "90%",
   fontWeight: "bold",
-  fontSize: '1.3rem'
+  fontSize: "1.3rem",
 };
 
 export const sxInput: SxProps<Theme> = {
