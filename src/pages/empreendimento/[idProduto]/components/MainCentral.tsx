@@ -67,7 +67,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
 
   return (
     <Grid container>
-      <Grid item xs={12} mb={12} ml={12}>
+      <Grid item xs={12} mb={12} ml={12} sx={{ "@media (max-width: 990px)": { ml: 2 } }}>
         <Box >
           <Typography
             sx={{ color: "#111820" }}
@@ -95,7 +95,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
           margin: "auto",
           boxSizing: "border-box",
           position: "relative",
-          width: "55%",
+          
           height: "115px",
           background: "#242424",
           border: "1px solid #FFFFFF",
@@ -103,7 +103,13 @@ function MainCentral({ apiInformations }: ApiInformations) {
           alignItems: "center",
           justifyContent: "center",
           gap: 10,
+          "@media (max-width: 990px)": { gap: 5 },
+          "@media (max-width: 500px)": { gap: 3, ml: 1, mr: 1 }
+          
         }}
+        xs={12}
+        sm={8}
+        md={6}
       >
         {Object.keys(updatedInformacoes).map((key) => (
           <Box key={""}>
@@ -115,7 +121,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
             />
             <Typography
               className={openSansExtraBold.className}
-              sx={{ color: "#FFF" }}
+              sx={{ color: "#FFF", "@media (max-width: 990px)": { fontSize: 14 }, "@media (max-width: 500px)": { fontSize: 12} }}
               variant="subtitle1"
             >
               {updatedInformacoes[key].tipografia}

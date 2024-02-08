@@ -122,7 +122,7 @@ function CardInput({ apiInformations }: ApiInformations) {
         xs={12}
         sx={{ textAlign: "center" }}
       >
-        <Grid xs={4} item sx={{ margin: "auto" }}>
+        <Grid xs={12} md={6} item sx={{ margin: "auto" }}>
           <FormControl
             sx={{ m: 0, width: "35ch" }}
             color="error"
@@ -145,14 +145,14 @@ function CardInput({ apiInformations }: ApiInformations) {
           </FormControl>
         </Grid>
       </Grid>
-      <Grid item xs={12} display={"contents"} sx={{ width: "90%" }}>
+      <Grid item xs={12} md={6} display={"contents"} sx={{ width: "90%" }}>
         {produtos
           .filter((produto) =>
             produto.localizacao.toLowerCase().includes(searchTerm.toLowerCase())
           )
           .map((produtos, i) => (
             <>
-              <Grid item xs={4} key={i}>
+              <Grid item xs={12} sm={6} md={4} key={i}>
                 <Link
                   sx={{ textDecoration: "none" }}
                   href={`/empreendimento/${produtos.idProduto}`}

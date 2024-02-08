@@ -10,7 +10,7 @@ function MainSuperior() {
     <>
       <Grid container>
         <Box sx={{ margin: 'auto'}}>
-          <Typography variant="h1" color="#FF2700" className={openSansExtraBold.className} sx={{ fontWeight: 'bold' }}>Quero Investir</Typography>
+          <Typography variant="h1" color="#FF2700" className={openSansExtraBold.className} sx={{ fontWeight: 'bold', "@media (max-width: 5570px)": {textAlign: 'center'}  }}>Quero Investir</Typography>
         </Box>
         <Box sx={{ margin: 'auto', textAlign: 'center', width: '80%' }}>
           <Typography variant='h6'>

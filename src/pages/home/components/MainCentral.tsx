@@ -70,10 +70,10 @@ function MainCentral() {
         p={8}
         display="flex"
         xs={12}
-        sx={{ textAlign: "center" }}
+        sx={{ textAlign: "center", "@media (max-width: 990px)": { display: 'block' } }}
       >
         {Object.keys(informacoesPrincipal).map((key) => (
-          <Grid xs={3} key={key} item sx={{ margin: "auto" }}>
+          <Grid xs={3} key={key}  item sx={{ margin: 'auto', marginTop: 'inherit', '@media (max-width: 990px)': { maxWidth: '100%' } }}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Image
                 src={informacoesPrincipal[key].src}
@@ -82,12 +82,11 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Box sx={{ maxHeight: '5em' }}>
-            <Typography variant="caption" sx={{ color: '#111820', width: '50%' }}>
+            <Box >
+            <Typography variant="caption" sx={{ color: '#111820'  }}>
               {informacoesPrincipal[key].tipografia}
             </Typography>
             </Box>
-            
           </Grid>
         ))}
       </Grid>
@@ -108,10 +107,10 @@ function MainCentral() {
         p={8}
         display="flex"
         xs={12}
-        sx={{ textAlign: "center" }}
+        sx={{ textAlign: "center", "@media (max-width: 990px)": { display: 'block' } }}
       >
         {Object.keys(informacoesSecundario).map((key) => (
-          <Grid xs={3} key={key} item sx={{ margin: "auto" }}>
+          <Grid xs={3} key={key} item sx={{ margin: 'auto', marginTop: 'inherit', '@media (max-width: 990px)': { maxWidth: '100%' } }}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Image
                 src={informacoesSecundario[key].src}

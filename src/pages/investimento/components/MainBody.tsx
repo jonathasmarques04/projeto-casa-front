@@ -43,12 +43,13 @@ function MainBody() {
           width="80%"
           display={"flex"}
           position={"relative"}
+          sx={{ "@media (max-width: 1370px)": { width: '90%',borderRadius: '0px 30px 30px 0px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
         >
-          <Box sx={{ margin: "auto", ml: 10, width: "80%" }}>
-            <Typography variant="h4" color={"white"}>
+          <Box sx={{ margin: "auto", ml: 10, "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
+            <Typography variant="h4" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 24 }  }}>
               {informacoes[0].titulo}
             </Typography>
-            <Typography variant="subtitle1" color={"white"}>
+            <Typography variant="subtitle1" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}>
               {informacoes[0].descricao}
             </Typography>
             <Button
@@ -63,6 +64,7 @@ function MainBody() {
           <Box
             sx={{
               margin: "auto",
+              "@media (max-width: 877px)": { display: 'none' }
             }}
           >
             <Image
@@ -72,7 +74,7 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box>
+          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -92,8 +94,9 @@ function MainBody() {
           ml={"auto"}
           mr={"0"}
           position={"relative"}
+          sx={{ "@media (max-width: 1370px)": { width: '90%' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
         >
-          <Box>
+          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -107,7 +110,7 @@ function MainBody() {
               }}
             />
           </Box>
-          <Box sx={{ margin: "auto" }}>
+          <Box sx={{ margin: "auto", "@media (max-width: 877px)": { display: 'none' } }}>
             <Image
               src="/financiamento.svg"
               width={100}
@@ -115,11 +118,11 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={styleGrayBox}>
-            <Typography sx={styleTypography} variant="h4" color={"white"}>
+          <Box sx={{ margin: "auto", ml: 10, flexDirection: 'column', "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
+            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }} variant="h4" color={"white"}>
               {informacoes[1].titulo}
             </Typography>
-            <Typography sx={styleTypography} variant="subtitle1" color={"white"}>
+            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }} variant="subtitle1" color={"white"}>
               {informacoes[1].descricao}
             </Typography>
             <Button
@@ -135,18 +138,19 @@ function MainBody() {
         </Grid>
         <Grid
           item
-          mt={6}
+          mt={7}
           bgcolor="#FF2700"
           height={250}
           width="80%"
           display={"flex"}
           position={"relative"}
+          sx={{ "@media (max-width: 1370px)": { width: '90%',borderRadius: '0px 30px 30px 0px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
         >
-          <Box sx={{ margin: "auto", ml: 10, width: "80%" }}>
-            <Typography variant="h4" color={"white"}>
+          <Box sx={{ margin: "auto", ml: 10, "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
+            <Typography variant="h4" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 24 }  }}>
               {informacoes[2].titulo}
             </Typography>
-            <Typography variant="subtitle1" color={"white"}>
+            <Typography variant="subtitle1" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}>
               {informacoes[2].descricao}
             </Typography>
             <Button
@@ -158,7 +162,12 @@ function MainBody() {
               Saiba Mais
             </Button>
           </Box>
-          <Box sx={{ margin: "auto" }}>
+          <Box
+            sx={{
+              margin: "auto",
+              "@media (max-width: 877px)": { display: 'none' }
+            }}
+          >
             <Image
               src="/lote-permuta.svg"
               width={100}
@@ -166,7 +175,7 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box>
+          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -185,10 +194,10 @@ function MainBody() {
           display={"flex"}
           ml={"auto"}
           mr={"0"}
-          mb={5}
           position={"relative"}
+          sx={{ "@media (max-width: 1370px)": { width: '90%' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 } }}
         >
-          <Box>
+          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -202,7 +211,7 @@ function MainBody() {
               }}
             />
           </Box>
-          <Box sx={{ margin: "auto" }}>
+          <Box sx={{ margin: "auto", "@media (max-width: 877px)": { display: 'none' } }}>
             <Image
               src="/pig.svg"
               width={100}
@@ -210,18 +219,19 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={styleGrayBox}>
-            <Typography sx={styleTypography} variant="h4" color={"white"}>
+          <Box sx={{ margin: "auto", ml: 10, flexDirection: 'column', "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
+            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }} variant="h4" color={"white"}>
               {informacoes[3].titulo}
             </Typography>
-            <Typography sx={styleTypography} variant="subtitle1" color={"white"}>
+            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }} variant="subtitle1" color={"white"}>
               {informacoes[3].descricao}
             </Typography>
             <Button
               color="inherit"
               className={openSansExtraBold.className}
-              sx={{ color: "#FF2700", mt: 2, justifyContent: "end", alignSelf: 'flex-end' }}
+              sx={{ color: "#FF2700", mt: 2, alignSelf: 'flex-end'}}
               variant="contained"
+              
             >
               Saiba Mais
             </Button>

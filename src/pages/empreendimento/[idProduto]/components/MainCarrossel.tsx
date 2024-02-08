@@ -78,25 +78,26 @@ function Carrossel({ apiImages }: CarrosselProps) {
   };
 
   return (
-    <Grid container>
-      <Grid pt={8} item sx={{ margin: "auto" }}>
-        <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
-          <Button
-            disableElevation
-            color="error"
-            variant="contained"
-            sx={sxButtonMaior}
-          >
-            GALERIA
-          </Button>
-        </Grid>
+    <Grid container xs={12} sx={{ margin: 0, display: 'contents' }}>
+      <Grid item pt={6} sx={{ display: "flex", margin: 'auto', textAlign: "center" }}>
+        <Button
+          disableElevation
+          color="error"
+          variant="contained"
+          sx={sxButtonMaior}
+          className={openSansExtraBold.className}
+        >
+          O QUE FAZEMOS?
+        </Button>
+      </Grid>
+      <Grid item sx={{ margin: "auto" }}>
         <Box mt={12} display="flex" justifyContent="center">
           <Box display="flex" alignItems="center" justifyContent="center">
-            <Button onClick={handlePrev}>
+            <Button onClick={handlePrev} sx={{ "@media (max-width: 490px)": {mr: 3}  }}>
               <ArrowBackIosNewIcon color="error" />
             </Button>
             <Slide direction="right" in={true}>
-              <Grid display="flex" justifyContent="center" margin={"auto"}>
+              <Grid display="flex" justifyContent="center" margin={"auto"} sx={{ "@media (max-width: 760px)": { width: 350, height: 450 }, "@media (max-width: 490px)": { width: 200, height: 450, mt: 0, ml: 0, mr: 0 } }}>
                 <Image
                   src={apiImages[activeIndex]}
                   width={500}
@@ -106,7 +107,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
                 />
               </Grid>
             </Slide>
-            <Button onClick={handleNext}>
+            <Button sx={{ "@media (max-width: 490px)": {ml: 3}  }} onClick={handleNext}>
               <ArrowForwardIosIcon color="error" />
             </Button>
           </Box>

@@ -12,12 +12,14 @@ export const sxGridContainerFade: SxProps<Theme> = {
 export const styleGrayBox: SxProps<Theme> = {
   margin: "auto",
   ml: 10,
-  width: "80%",
   display: "flex",
   flexDirection: "column",
+  "@media (max-width: 1370px)": { width: '90%' },
+  "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }
 };
 
 export const styleTypography: SxProps<Theme> = {
   display: "flex",
   justifyContent: "flex-end",
+  "@media (max-width: 1370px)": { fontSize: 24 }
 };

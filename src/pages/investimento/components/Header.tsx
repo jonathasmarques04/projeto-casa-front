@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
 import Image from "next/image";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import { Grid } from "@mui/material";
 import { sxButtonHeader } from "@/pages/home/components/style";
 
@@ -33,12 +33,17 @@ function Header() {
   };
 
   return (
-    <Grid container sx={{ display: "flex",
-    justifyContent: "space-between",
-    margin: 'auto',
-    flexWrap: 'nowrap',
-    flexDirection: 'column',
-    width: '90%' }}>
+    <Grid
+      container
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        margin: "auto",
+        flexWrap: "nowrap",
+        flexDirection: "column",
+        width: "90%",
+      }}
+    >
       <Toolbar disableGutters sx={{ gap: 12 }}>
         <Typography
           variant="h6"
@@ -62,44 +67,8 @@ function Header() {
             alt="Picture of the author"
           />
         </Typography>
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-            color="default"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{
-              display: { xs: "block", color: "white", md: "none" },
-            }}
-          >
-            
-          </Menu>
-        </Box>
-        <AdbIcon
-          sx={{ display: { xs: "flex", color: "white", md: "none" }, mr: 1 }}
-        />
         <Typography
           variant="h5"
-          noWrap
           component="a"
           href="#app-bar-with-responsive-menu"
           sx={{
@@ -119,11 +88,15 @@ function Header() {
             alt="Picture of the author"
           />
         </Typography>
-        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-        </Box>
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Fale conosco">
-          <Button sx={sxButtonHeader} className={openSansExtraBold.className} disableElevation variant="contained">
+            <Button
+              sx={sxButtonHeader}
+              className={openSansExtraBold.className}
+              disableElevation
+              variant="contained"
+            >
               Fale conosco
             </Button>
           </Tooltip>

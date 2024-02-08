@@ -13,6 +13,8 @@ interface Produto {
   titulo: string;
   descricao: string;
   localizacao: string;
+  imagem: string;
+  areaTotal: string;
 }
 
 interface ApiInformations {
@@ -35,6 +37,8 @@ export async function fetchInformacoesSuperiorApi(
       produtos.titulo,
       produtos.descricao,
       produtos.localizacao,
+      produtos.imagem,
+      produtos.areaTotal
     ];
 
     return information;
@@ -55,13 +59,15 @@ function MainSuperior({ apiInformations }: ApiInformations) {
         mr={12}
         ml={12}
         xs={12}
+        md={12}
         sx={{
           borderRadius: "15px",
           backgroundSize: "100%",
           backgroundPosition: "100%",
-
+          backgroundRepeat: "no-repeat",
           backgroundImage:
-            'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagem-empreendimento.svg");',
+            `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${apiInformations[3]}")`,
+          "@media (max-width: 990px)": { ml: 2, mr: 2 }
         }}
       >
         <Box ml={1} mt={4}>
@@ -79,7 +85,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
             className={openSansExtraBold.className}
             variant="h6"
           >
-            Com lazer premium e integrado a uma nova praça memorial de 2.700m²
+            Com lazer premium e integrado a uma nova praça memorial de {apiInformations[4]}m²
           </Typography>
         </Box>
         <Box
