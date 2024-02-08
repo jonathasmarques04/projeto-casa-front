@@ -96,6 +96,7 @@ function Header() {
               className={openSansExtraBold.className}
               disableElevation
               variant="contained"
+              href="https://contate.me/casa-construtora1"
             >
               Fale conosco
             </Button>

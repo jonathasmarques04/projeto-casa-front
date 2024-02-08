@@ -3,6 +3,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import localFont from "@next/font/local";
 import { sxButtonMaior } from "./style";
+import { useRef } from "react";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
@@ -90,6 +91,7 @@ function MainCentral() {
           </Grid>
         ))}
       </Grid>
+      
       <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
         <Button
           disableElevation
