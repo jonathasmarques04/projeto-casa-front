@@ -170,6 +170,7 @@ function Header() {
                   fontSize: "10px",
                 },
               }}
+              href={`#${page.toLocaleLowerCase()}`}
             >
               {page}
             </Button>

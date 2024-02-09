@@ -20,12 +20,7 @@ const openSansExtraBold = localFont({
 
 const fonte = localFont({ src: "../../../../public/Causten-Regular.otf" });
 
-const pages = [
-  "Quem somos",
-  "O que fazemos",
-  "Quero Investir",
-  "Imóveis à venda",
-];
+const pages = ["Quem somos", "O que fazemos", "Investimento", "Imóveis"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -177,6 +172,11 @@ function Header() {
                   fontSize: "10px",
                 },
               }}
+              href={
+                page == "Investimento"
+                  ? "/investimento"
+                  : `#${page.toLocaleLowerCase()}`
+              }
             >
               {page}
             </Button>
