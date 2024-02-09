@@ -8,7 +8,9 @@ const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
 });
 
-const informacoesPrincipal: { [key: string]: { src: string; tipografia: string } } = {
+const informacoesPrincipal: {
+  [key: string]: { src: string; tipografia: string };
+} = {
   informacoes1: {
     src: "/conforto.svg",
     tipografia:
@@ -26,7 +28,9 @@ const informacoesPrincipal: { [key: string]: { src: string; tipografia: string }
   },
 };
 
-const informacoesSecundario: { [key: string]: { src: string; tipografia: string } } = {
+const informacoesSecundario: {
+  [key: string]: { src: string; tipografia: string };
+} = {
   informacoes1: {
     src: "/conforto.svg",
     tipografia:
@@ -49,7 +53,7 @@ function MainCentral() {
     <Grid container xs={12} >
       <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6} id='page1'>
         <Button
-          id="conheca"
+          id="quem somos"
           disableElevation
           color="error"
           variant="contained"
@@ -58,7 +62,12 @@ function MainCentral() {
         >
           CONHEÇA A CASA
         </Button>
-        <Typography variant="h6" m={"auto"} my={4} sx={{ width: "90%", color: '#111820', fontSize: '2.5vh' }}>
+        <Typography
+          variant="h6"
+          m={"auto"}
+          my={4}
+          sx={{ width: "90%", color: "#111820", fontSize: "2.5vh" }}
+        >
           A <span style={{ color: "#FF2700" }}>Construtora Carvalho de Sá</span>{" "}
           nasce da ideia de trazer uma nova forma de criar e gerenciar
           construções, com o foco familiar, moderno, simples e tecnológico.
@@ -70,10 +79,22 @@ function MainCentral() {
         p={8}
         display="flex"
         xs={12}
-        sx={{ textAlign: "center", "@media (max-width: 990px)": { display: 'block' } }}
+        sx={{
+          textAlign: "center",
+          "@media (max-width: 990px)": { display: "block" },
+        }}
       >
         {Object.keys(informacoesPrincipal).map((key) => (
-          <Grid xs={3} key={key}  item sx={{ margin: 'auto', marginTop: 'inherit', '@media (max-width: 990px)': { maxWidth: '100%' } }}>
+          <Grid
+            xs={3}
+            key={key}
+            item
+            sx={{
+              margin: "auto",
+              marginTop: "inherit",
+              "@media (max-width: 990px)": { maxWidth: "100%" },
+            }}
+          >
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Image
                 src={informacoesPrincipal[key].src}
@@ -82,15 +103,15 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Box >
-            <Typography variant="caption" sx={{ color: '#111820'  }}>
-              {informacoesPrincipal[key].tipografia}
-            </Typography>
+            <Box>
+              <Typography variant="caption" sx={{ color: "#111820" }}>
+                {informacoesPrincipal[key].tipografia}
+              </Typography>
             </Box>
           </Grid>
         ))}
       </Grid>
-      
+
       <Grid item sx={{ display: "contents", textAlign: "center" }} xs={6}>
         <Button
           disableElevation
@@ -98,6 +119,7 @@ function MainCentral() {
           variant="contained"
           sx={sxButtonMaior}
           className={openSansExtraBold.className}
+          id="o que fazemos"
         >
           O QUE FAZEMOS?
         </Button>
@@ -108,10 +130,22 @@ function MainCentral() {
         p={8}
         display="flex"
         xs={12}
-        sx={{ textAlign: "center", "@media (max-width: 990px)": { display: 'block' } }}
+        sx={{
+          textAlign: "center",
+          "@media (max-width: 990px)": { display: "block" },
+        }}
       >
         {Object.keys(informacoesSecundario).map((key) => (
-          <Grid xs={3} key={key} item sx={{ margin: 'auto', marginTop: 'inherit', '@media (max-width: 990px)': { maxWidth: '100%' } }}>
+          <Grid
+            xs={3}
+            key={key}
+            item
+            sx={{
+              margin: "auto",
+              marginTop: "inherit",
+              "@media (max-width: 990px)": { maxWidth: "100%" },
+            }}
+          >
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Image
                 src={informacoesSecundario[key].src}
@@ -120,7 +154,7 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Typography variant="caption" sx={{ color: '#111820' }}>
+            <Typography variant="caption" sx={{ color: "#111820" }}>
               {informacoesSecundario[key].tipografia}
             </Typography>
           </Grid>

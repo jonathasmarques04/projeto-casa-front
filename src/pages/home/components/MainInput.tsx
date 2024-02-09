@@ -90,6 +90,7 @@ function InputMain() {
           variant="contained"
           sx={sxButtonMaior}
           className={openSansExtraBold.className}
+          id="imóveis"
         >
           IMÓVEIS À VENDA
         </Button>

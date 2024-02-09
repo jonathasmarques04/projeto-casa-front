@@ -78,36 +78,61 @@ function Carrossel({ apiImages }: CarrosselProps) {
   };
 
   return (
-    <Grid container xs={12} sx={{ margin: 0, display: 'contents' }}>
-      <Grid item pt={6} sx={{ display: "flex", margin: 'auto', textAlign: "center" }}>
+    <Grid container xs={12} sx={{ margin: 0, display: "contents" }}>
+      <Grid
+        item
+        pt={6}
+        sx={{ display: "flex", margin: "auto", textAlign: "center" }}
+      >
         <Button
           disableElevation
           color="error"
           variant="contained"
           sx={sxButtonMaior}
           className={openSansExtraBold.className}
+          id="galeria"
         >
-          O QUE FAZEMOS?
+          GALERIA
         </Button>
       </Grid>
       <Grid item sx={{ margin: "auto" }}>
         <Box mt={12} display="flex" justifyContent="center">
           <Box display="flex" alignItems="center" justifyContent="center">
-            <Button onClick={handlePrev} sx={{ "@media (max-width: 490px)": {mr: 3}  }}>
+            <Button
+              onClick={handlePrev}
+              sx={{ "@media (max-width: 490px)": { mr: 3 } }}
+            >
               <ArrowBackIosNewIcon color="error" />
             </Button>
             <Slide direction="right" in={true}>
-              <Grid display="flex" justifyContent="center" margin={"auto"} sx={{ "@media (max-width: 760px)": { width: 350, height: 450 }, "@media (max-width: 490px)": { width: 200, height: 450, mt: 0, ml: 0, mr: 0 } }}>
+              <Grid
+                display="flex"
+                justifyContent="center"
+                margin={"auto"}
+                sx={{
+                  "@media (max-width: 760px)": { width: 350, height: 450 },
+                  "@media (max-width: 490px)": {
+                    width: 200,
+                    height: 450,
+                    mt: 0,
+                    ml: 0,
+                    mr: 0,
+                  },
+                }}
+              >
                 <Image
                   src={apiImages[activeIndex]}
                   width={500}
                   height={500}
                   alt="Imagem"
-                  style={{ borderRadius: '25px' }}
+                  style={{ borderRadius: "25px" }}
                 />
               </Grid>
             </Slide>
-            <Button sx={{ "@media (max-width: 490px)": {ml: 3}  }} onClick={handleNext}>
+            <Button
+              sx={{ "@media (max-width: 490px)": { ml: 3 } }}
+              onClick={handleNext}
+            >
               <ArrowForwardIosIcon color="error" />
             </Button>
           </Box>
