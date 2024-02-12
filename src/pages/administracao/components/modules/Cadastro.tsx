@@ -1,7 +1,10 @@
 import { Box, Button, Grid, Input, TextField, Typography } from "@mui/material";
+import { useState } from 'react';
+import $ from "jquery";
 
 
 function Cadastro() {
+
   return (
     <Grid container display={"block"}>
       <Typography variant="h3">Administração de Produtos</Typography>

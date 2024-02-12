@@ -20,10 +20,6 @@ import {
     localizacao: string
   }
   
-  interface IdProduto {
-    idProduto: number
-  }
-  
   interface informacoes {
     produtos: Produto;
   }
