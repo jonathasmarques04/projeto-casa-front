@@ -26,82 +26,56 @@ interface Produto {
   imagem12: string;
 }
 
-function Cadastro() {
-  const [produto, setProduto] = useState<Produto>();
+function cadastrarProduto(produto: Produto) {
+  $.ajax({
+    url: "http://localhost:3020/produto/1",
+    type: "POST",
+    data: produto,
+    success: function (data) {
+      console.log("Produto cadastrado com sucesso: ", data);
+    },
+    error: function (error) {
+      console.log("Erro ao cadastrar produto: ", error);
+    },
+  });
+}
 
-  const cadastrarProduto = async (event: React.FormEvent<HTMLFormElement>) => {
+function Cadastro() {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
-    const titulo = event.currentTarget["titulo"].value;
-    const descricao = event.currentTarget["descricao"].value;
-    const quartos = event.currentTarget["quartos"].value;
-    const suites = event.currentTarget["suites"].value;
-    const banheiros = event.currentTarget["banheiros"].value;
-    const areaUtil = event.currentTarget["areaUtil"].value;
-    const areaTotal = event.currentTarget["areaTotal"].value;
-    const localizacao = event.currentTarget["localizacao"].value;
-    const imagem = event.currentTarget["imagem"].value;
-    const imagem1 = event.currentTarget["imagem1"].value;
-    const imagem2 = event.currentTarget["imagem2"].value;
-    const imagem3 = event.currentTarget["imagem3"].value;
-    const imagem4 = event.currentTarget["imagem4"].value;
-    const imagem5 = event.currentTarget["imagem5"].value;
-    const imagem6 = event.currentTarget["imagem6"].value;
-    const imagem7 = event.currentTarget["imagem7"].value;
-    const imagem8 = event.currentTarget["imagem8"].value;
-    const imagem9 = event.currentTarget["imagem9"].value;
-    const imagem10 = event.currentTarget["imagem10"].value;
-    const imagem11 = event.currentTarget["imagem11"].value;
-    const imagem12 = event.currentTarget["imagem12"].value;
 
     const produto = {
-      titulo,
-      descricao,
-      quartos,
-      suites,
-      banheiros,
-      areaUtil,
-      areaTotal,
-      localizacao,
-      imagem,
-      imagem1,
-      imagem2,
-      imagem3,
-      imagem4,
-      imagem5,
-      imagem6,
-      imagem7,
-      imagem8,
-      imagem9,
-      imagem10,
-      imagem11,
-      imagem12,
+      titulo: event.currentTarget["titulo"].value,
+      descricao: event.currentTarget["descricao"].value,
+      quartos: event.currentTarget["quartos"].value,
+      suites: event.currentTarget["suites"].value,
+      banheiros: event.currentTarget["banheiros"].value,
+      areaUtil: event.currentTarget["areaUtil"].value,
+      areaTotal: event.currentTarget["areaTotal"].value,
+      localizacao: event.currentTarget["localizacao"].value,
+      imagem: event.currentTarget["imagem"].value,
+      imagem1: event.currentTarget["imagem1"].value,
+      imagem2: event.currentTarget["imagem2"].value,
+      imagem3: event.currentTarget["imagem3"].value,
+      imagem4: event.currentTarget["imagem4"].value,
+      imagem5: event.currentTarget["imagem5"].value,
+      imagem6: event.currentTarget["imagem6"].value,
+      imagem7: event.currentTarget["imagem7"].value,
+      imagem8: event.currentTarget["imagem8"].value,
+      imagem9: event.currentTarget["imagem9"].value,
+      imagem10: event.currentTarget["imagem10"].value,
+      imagem11: event.currentTarget["imagem11"].value,
+      imagem12: event.currentTarget["imagem12"].value,
     };
 
-    try {
-      const response = await fetch("http://localhost:3020/produto/1", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(produto),
-      });
-
-      if (response.ok) {
-        alert("Produto cadastrado com sucesso!");
-        $("#form-cadastro").trigger("reset");
-      } else {
-        alert("Ocorreu um erro ao cadastrar o produto!");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    cadastrarProduto(produto);
   };
 
   return (
     <Grid container display={"block"}>
       <Typography variant="h3">Administração de Produtos</Typography>
       <Typography variant="h5">Cadastro de Produto</Typography>
-      <form id="form-cadastro">
+      <form id="form-cadastro" onSubmit={handleSubmit}>
         <TextField
           label="Título"
           id="titulo"
