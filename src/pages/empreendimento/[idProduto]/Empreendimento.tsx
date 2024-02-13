@@ -8,6 +8,7 @@ import Carrossel, { fetchImagensDaAPI } from "./components/MainCarrossel";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 function Empreendimento() {
   const [apiInformation, setApiInformation] = useState<string[]>([]);
@@ -40,6 +41,9 @@ function Empreendimento() {
 
   return (
     <>
+      <Head>
+        <title>Empreendimento</title>
+      </Head>
       <Header />
       <MainSuperior apiInformations={apiSuperiorInformation} />
       <MainCentral apiInformations={apiInformation} />

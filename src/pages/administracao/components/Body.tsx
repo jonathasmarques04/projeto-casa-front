@@ -1,7 +1,7 @@
-import { Grid, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Cadastro from "./modules/Cadastro";
-import ProdutosCadastrados from "./modules/GetProdutos";
 import ExcluirProdutos from "./modules/ExcluiProdutos";
+import ProdutosCadastrados from "./modules/GetProdutos";
 
 function Body() {
   return (

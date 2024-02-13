@@ -61,7 +61,6 @@ function Header() {
       >
         <Typography
           variant="h6"
-          noWrap
           component="a"
           href="/"
           sx={{
@@ -127,6 +126,7 @@ function Header() {
           component="a"
           href="#app-bar-with-responsive-menu"
           sx={{
+            
             display: { xs: "flex", md: "none" },
             fontFamily: "monospace",
             fontWeight: 700,
@@ -150,7 +150,6 @@ function Header() {
         <Box
           sx={{
             flexGrow: 1,
-            gap: 8,
             display: { xs: "none", md: "flex" },
           }}
         >
@@ -160,6 +159,7 @@ function Header() {
               key={page}
               onClick={handleCloseNavMenu}
               sx={{
+                margin: 'auto',
                 color: "#000",
                 display: "block",
                 fontWeight: "bold",
@@ -168,6 +168,9 @@ function Header() {
                 letterSpacing: "0.1rem",
                 textTransform: "uppercase",
                 textDecoration: "none",
+                "@media (max-width: 1490px)": {
+                  fontSize: "14px",
+                },
                 "@media (max-width: 600px)": {
                   fontSize: "10px",
                 },
