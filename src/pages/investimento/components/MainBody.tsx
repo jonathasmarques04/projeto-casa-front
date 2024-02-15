@@ -94,9 +94,9 @@ function MainBody() {
           ml={"auto"}
           mr={"0"}
           position={"relative"}
-          sx={{ "@media (max-width: 1370px)": { width: '90%' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
+          sx={{ "@media (max-width: 1370px)": { width: '90%', borderRadius: '30px 0px 0px 30px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
         >
-          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
+          <Box sx={{ "@media (max-width: 877px)": { display: 'none' }, right: "93.3%" }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -105,7 +105,7 @@ function MainBody() {
               style={{
                 position: "absolute",
                 top: 0,
-                right: "93.3%",
+                
                 transform: "scaleX(-1)",
               }}
             />
@@ -195,9 +195,9 @@ function MainBody() {
           ml={"auto"}
           mr={"0"}
           position={"relative"}
-          sx={{ "@media (max-width: 1370px)": { width: '90%' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 } }}
+          sx={{ "@media (max-width: 1370px)": { width: '90%', borderRadius: '30px 0px 0px 30px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 } }}
         >
-          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
+          <Box sx={{ "@media (max-width: 877px)": { display: 'none' }, right: "93.3%", }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -206,7 +206,6 @@ function MainBody() {
               style={{
                 position: "absolute",
                 top: 0,
-                right: "93.3%",
                 transform: "scaleX(-1)",
               }}
             />

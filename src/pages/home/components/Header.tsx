@@ -20,7 +20,7 @@ const openSansExtraBold = localFont({
 
 const fonte = localFont({ src: "../../../../public/Causten-Regular.otf" });
 
-const pages = ["Quem somos", "O que fazemos", "Investimento", "Imóveis"];
+const pages = ["Sobre", "O que fazemos", "Investimento", "Imóveis"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -46,11 +46,17 @@ function Header() {
         flexDirection: "column",
       }}
       xs={12}
-      md={10}
+      sm={10}
     >
       <Toolbar
         sx={{
           gap: 12,
+          "@media (max-width: 990px)": {
+            gap: 0,
+          },
+          "@media (max-width: 900px)": {
+            gap: 6,
+          },
           "@media (max-width: 600px)": {
             gap: 6,
           },
@@ -65,7 +71,7 @@ function Header() {
           href="/"
           sx={{
             mr: 2,
-            display: { xs: "none", md: "flex" },
+            display: { xs: "none", md: "none", lg: 'flex' },
             fontFamily: "monospace",
             fontWeight: 700,
             letterSpacing: ".3rem",
@@ -80,7 +86,7 @@ function Header() {
             alt="Picture of the author"
           />
         </Typography>
-        <Box sx={{ flexGrow: 1, display: { xs: 12, md: "none" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: 12, md: "flex", lg: 'none' } }}>
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -150,7 +156,7 @@ function Header() {
         <Box
           sx={{
             flexGrow: 1,
-            display: { xs: "none", md: "flex" },
+            display: { xs: "none", md: "none", lg: 'flex' },
           }}
         >
           {pages.map((page) => (
@@ -170,6 +176,7 @@ function Header() {
                 textDecoration: "none",
                 "@media (max-width: 1490px)": {
                   fontSize: "14px",
+                  margin: '0px'
                 },
                 "@media (max-width: 600px)": {
                   fontSize: "10px",

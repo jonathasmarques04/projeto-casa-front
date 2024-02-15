@@ -25,7 +25,7 @@ export async function fetchInformacoesSuperiorApi(
   param: string
 ): Promise<string[]> {
   try {
-    const response = await fetch(`http://localhost:3020/produto/${param}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_PRODUTO}/${param}`);
     if (!response.ok) {
       throw new Error("Erro na requisição da API");
     }

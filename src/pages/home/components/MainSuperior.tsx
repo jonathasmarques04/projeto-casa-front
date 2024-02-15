@@ -13,7 +13,7 @@ function MainSuperior() {
       <Grid item xs={12} ml={12} gap={8} display="flex" sx={{
         "@media (max-width: 990px)": { ml: 0 }
       }}>
-        <Grid item xs={12} md={6} mt={12}>
+        <Grid item xs={12} md={12} mt={12}>
           <Typography
             variant="h1"
             color="#FF2700"

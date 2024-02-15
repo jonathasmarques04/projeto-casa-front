@@ -99,7 +99,7 @@ function CardInput({ apiInformations }: ApiInformations) {
 
   const getProdutos = async () => {
     try {
-      const response = await fetch(`http://localhost:3020/produto/`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_PRODUTO}`);
       const data = await response.json();
 
       if (data) {
