@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Image from "next/image";
 import localFont from "@next/font/local";
 import { Grid } from "@mui/material";
-import { sxButtonHeader } from "../../../home/components/style";
+import { sxButtonHeader } from "../../../../styles/stylesHome";
 
 const openSansExtraBold = localFont({
   src: "../../../../../public/Causten-Regular.otf",
@@ -110,13 +110,19 @@ function Header() {
           >
             {pages.map((page) => (
               <MenuItem
-                className={openSansExtraBold.className}
-                sx={{ fontWeight: "500" }}
-                key={page}
-                onClick={handleCloseNavMenu}
-              >
-                <Typography textAlign="center">{page}</Typography>
-              </MenuItem>
+              className={openSansExtraBold.className}
+              sx={{ fontWeight: "500" }}
+              key={page}
+              onClick={handleCloseNavMenu}
+              component="a"
+              href={
+                page === "Investimento"
+                  ? "/investimento"
+                  : `#${page.toLocaleLowerCase()}`
+              }
+            >
+              <Typography textAlign="center">{page}</Typography>
+            </MenuItem>
             ))}
           </Menu>
         </Box>

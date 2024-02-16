@@ -13,7 +13,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { Grid } from "@mui/material";
-import { sxButtonHeader } from "@/pages/home/components/style";
+import { sxButtonHeader } from "@/styles/stylesHome";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",

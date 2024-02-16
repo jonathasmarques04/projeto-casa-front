@@ -1,5 +1,0 @@
-export * from './Header'
-export * from './MainSuperior'
-export * from './MainCentral'
-export * from './MainCarrossel'
-export * from './Footer'

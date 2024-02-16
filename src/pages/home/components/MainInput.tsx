@@ -12,7 +12,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import localFont from "@next/font/local";
 import { styled } from "@mui/system";
 import React from "react";
-import { sxButtonMaior } from "./style";
+import { sxButtonMaior } from "../../../styles/stylesHome";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",

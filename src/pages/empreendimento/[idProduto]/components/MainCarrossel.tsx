@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import localFont from "@next/font/local";
 import Image from "next/image";
-import { sxButtonMaior } from "./styles";
+import { sxButtonMaior } from "../../../../styles/stylesEmpreendimento";
 
 import { useState } from "react";
 

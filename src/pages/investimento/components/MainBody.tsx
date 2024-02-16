@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import localFont from "@next/font/local";
 import Image from "next/image";
-import { styleGrayBox, styleTypography, sxGridContainerFade } from "./styles";
+import { styleGrayBox, styleTypography, sxGridContainerFade } from "../../../styles/stylesInvestimento";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",

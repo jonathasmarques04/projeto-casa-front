@@ -2,7 +2,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 
 import Image from "next/image";
 import localFont from "@next/font/local";
-import { sxButtonMaior } from "./style";
+import { sxButtonMaior } from "../../../styles/stylesHome";
 
 const openSansExtraBold = localFont({
   src: "../../../../public/Causten-Regular.otf",
