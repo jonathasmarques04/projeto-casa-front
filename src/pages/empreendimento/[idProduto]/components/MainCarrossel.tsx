@@ -121,7 +121,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
                 }}
               >
                 <Image
-                  src={apiImages[activeIndex]}
+                  src={apiImages && apiImages[activeIndex]}
                   width={500}
                   height={500}
                   alt="Imagem"

@@ -52,31 +52,30 @@ export async function fetchInformacoesApi(param: string): Promise<string[]> {
 }
 
 function MainCentral({ apiInformations }: ApiInformations) {
-  const [apiInformation, setApiInformation] =
-    useState<string[]>(apiInformations);
+  const [apiInformation, setApiInformation] = useState<string[]>(apiInformations);
 
   const updatedInformacoes: {
     [key: string]: { src: string; tipografia: string };
   } = {
     informacoes1: {
       src: "/informacoes-1.svg",
-      tipografia: `${apiInformations[0]} quartos`,
+      tipografia: `${apiInformations && apiInformations.length > 0 ? apiInformations[0] : ''} quartos`,
     },
     informacoes2: {
       src: "/informacoes-2.svg",
-      tipografia: `${apiInformations[1]} suítes`,
+      tipografia: `${apiInformations && apiInformations.length > 0 ? apiInformations[1] : ''} suítes`,
     },
     informacoes3: {
       src: "/informacoes-3.svg",
-      tipografia: `${apiInformations[2]} banheiros`,
+      tipografia: `${apiInformations && apiInformations.length > 0 ? apiInformations[2] : ''} banheiros`,
     },
     informacoes4: {
       src: "/informacoes-4.svg",
-      tipografia: `${apiInformations[3]}m² A. Útil`,
+      tipografia: `${apiInformations && apiInformations.length > 0 ? apiInformations[3] : ''}m² A. Útil`,
     },
     informacoes5: {
       src: "/informacoes-5.svg",
-      tipografia: `${apiInformations[4]}m² A. Total`,
+      tipografia: `${apiInformations && apiInformations.length > 0 ? apiInformations[4] : ''}m² A. Total`,
     },
   };
 
@@ -96,7 +95,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
             className={openSansExtraBold.className}
             variant="h2"
           >
-            {apiInformations[5]}
+            {apiInformations && apiInformations.length > 0 ? apiInformations[5] : ''}
           </Typography>
         </Box>
         <Box>
@@ -105,7 +104,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
             className={openSansExtraBold.className}
             variant="h6"
           >
-            {apiInformations[6]}
+            {apiInformations && apiInformations.length > 0 ? apiInformations[6] : ''}
           </Typography>
         </Box>
       </Grid>

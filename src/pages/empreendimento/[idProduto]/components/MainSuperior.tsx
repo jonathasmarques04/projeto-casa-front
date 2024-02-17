@@ -65,8 +65,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
           backgroundSize: "100%",
           backgroundPosition: "100%",
           backgroundRepeat: "no-repeat",
-          backgroundImage:
-            `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${apiInformations[3]}")`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${apiInformations && apiInformations.length > 3 ? apiInformations[3] : '/imagem-predio.svg'}")`,
           "@media (max-width: 990px)": { ml: 2, mr: 2 }
         }}
       >
@@ -76,7 +75,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
             className={openSansExtraBold.className}
             variant="h3"
           >
-            {apiInformations[0]}
+            {apiInformations && apiInformations.length > 0 ? apiInformations[0] : 'Titulo'}
           </Typography>
         </Box>
         <Box ml={1} mb={2}>
@@ -85,7 +84,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
             className={openSansExtraBold.className}
             variant="h6"
           >
-            Com lazer premium e integrado a uma nova praça memorial de {apiInformations[4]}m²
+            Com lazer premium e integrado a uma nova praça memorial de {apiInformations && apiInformations.length > 0 ? apiInformations[4] : ''}m²
           </Typography>
         </Box>
         <Box
@@ -109,7 +108,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
             alt="Picture of the author"
           />
           <Typography className={openSansExtraBold.className} sx={{ color: "#111820" }} variant="h6">
-            {apiInformations[2]}
+          {apiInformations && apiInformations.length > 0 ? apiInformations[2] : ''}
           </Typography>
         </Box>
       </Grid>
