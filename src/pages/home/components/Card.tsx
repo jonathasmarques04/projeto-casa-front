@@ -120,11 +120,16 @@ function CardInput({ apiInformations }: ApiInformations) {
         p={8}
         display="flex"
         xs={12}
-        sx={{ textAlign: "center" }}
+        sx={{ textAlign: "center", "@media (max-width: 420px)": {
+          gap: 0,
+          p: 2
+        }, }}
       >
         <Grid xs={12} md={6} item sx={{ margin: "auto" }}>
           <FormControl
-            sx={{ m: 0, width: "35ch" }}
+            sx={{ m: 0, width: "35ch", "@media (max-width: 320px)": {
+              width: '30ch',
+            }, }}
             color="error"
             variant="outlined"
           >
