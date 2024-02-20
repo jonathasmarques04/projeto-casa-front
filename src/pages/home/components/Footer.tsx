@@ -14,7 +14,6 @@ function Footer() {
         <Grid item key={key}>
           <Typography
             variant="h6"
-            noWrap
             component="a"
             href="https://www.instagram.com/ca.sa.construtora/"
             sx={{

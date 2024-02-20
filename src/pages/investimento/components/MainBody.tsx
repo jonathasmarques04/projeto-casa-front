@@ -194,6 +194,7 @@ function MainBody() {
           display={"flex"}
           ml={"auto"}
           mr={"0"}
+          mb={6}
           position={"relative"}
           sx={{ "@media (max-width: 1370px)": { width: '90%', borderRadius: '30px 0px 0px 30px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 } }}
         >

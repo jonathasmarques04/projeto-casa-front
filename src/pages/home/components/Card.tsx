@@ -239,7 +239,7 @@ function CardInput({ apiInformations }: ApiInformations) {
                 </Box>
                 <Box
                   onClick={linkWhatsapp2}
-                  sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}
+                  sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2, cursor: 'pointer' }}
                 >
                   <Image
                     src="/300849399_1378995459293714_446150436152832763_n.jpg"
@@ -261,6 +261,7 @@ function CardInput({ apiInformations }: ApiInformations) {
                     gap: 2,
                     mt: 2,
                     mb: 2,
+                    cursor: 'pointer'
                   }}
                 >
                   <Image

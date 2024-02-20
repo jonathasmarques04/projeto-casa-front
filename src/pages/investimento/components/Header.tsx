@@ -47,7 +47,6 @@ function Header() {
       <Toolbar disableGutters sx={{ gap: 12 }}>
         <Typography
           variant="h6"
-          noWrap
           component="a"
           href="/"
           sx={{
@@ -70,7 +69,7 @@ function Header() {
         <Typography
           variant="h5"
           component="a"
-          href="#app-bar-with-responsive-menu"
+          href="/"
           sx={{
             display: { xs: "flex", md: "none" },
             flexGrow: 1,

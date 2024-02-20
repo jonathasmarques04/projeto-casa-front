@@ -4,6 +4,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import localFont from "@next/font/local";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const openSansExtraBold = localFont({
   src: "../../../../../public/Causten-Regular.otf",
@@ -51,6 +52,18 @@ export async function fetchInformacoesSuperiorApi(
 function MainSuperior({ apiInformations }: ApiInformations) {
   const [apiInformation, setApiInformation] =
     useState<string[]>(apiInformations);
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const delay = 1000; // 1 segundo de atraso
+    const timeoutId = setTimeout(() => {
+      if (apiInformations.length === 0) {
+        router.push('/404');
+      }
+    }, delay);
+  
+    return () => clearTimeout(timeoutId);
+  }, [apiInformations, router]);
 
   return (
     <Grid container>
