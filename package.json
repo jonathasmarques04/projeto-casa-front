@@ -20,6 +20,7 @@
     "dotenv": "^16.4.4",
     "jquery": "^3.7.1",
     "next": "latest",
+    "next-google-fonts": "^2.2.0",
     "nookies": "^2.5.2",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
