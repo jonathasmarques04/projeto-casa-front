@@ -111,7 +111,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
             alt="Picture of the author"
           />
           <Typography className={outfit.className} sx={{ color: "#111820" }} variant="h6">
-            {apiInformations[2]}
+          {apiInformations && apiInformations.length > 0 ? apiInformations[2] : ''}
           </Typography>
         </Box>
       </Grid>
