@@ -2,13 +2,12 @@ import * as React from "react";
 
 import { Box, Grid, Typography } from "@mui/material";
 
-import localFont from "@next/font/local";
 import Image from "next/image";
 import { useState } from "react";
+import { Outfit } from 'next/font/google'
+import { sxGreatGridItem } from "@/styles/stylesEmpreendimento";
 
-const openSansExtraBold = localFont({
-  src: "../../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"], weight: '300' })
 
 interface Produto {
   quartos: string;
@@ -92,7 +91,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
           <Typography
             sx={{ color: "#111820" }}
             mt={8}
-            className={openSansExtraBold.className}
+            className={outfit.className}
             variant="h2"
           >
             {apiInformations && apiInformations.length > 0 ? apiInformations[5] : ''}
@@ -101,7 +100,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
         <Box>
           <Typography
             sx={{ color: "#111820" }}
-            className={openSansExtraBold.className}
+            className={outfit.className}
             variant="h6"
           >
             {apiInformations && apiInformations.length > 0 ? apiInformations[6] : ''}
@@ -110,22 +109,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
       </Grid>
       <Grid
         item
-        sx={{
-          display: "flex",
-          margin: "auto",
-          boxSizing: "border-box",
-          position: "relative",
-
-          height: "115px",
-          background: "#242424",
-          border: "1px solid #FFFFFF",
-          borderRadius: "12px",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 10,
-          "@media (max-width: 990px)": { gap: 5 },
-          "@media (max-width: 500px)": { gap: 3, ml: 1, mr: 1 },
-        }}
+        sx={sxGreatGridItem}
         xs={12}
         sm={8}
         md={6}
@@ -139,7 +123,7 @@ function MainCentral({ apiInformations }: ApiInformations) {
               alt="Picture of the author"
             />
             <Typography
-              className={openSansExtraBold.className}
+              className={outfit.className}
               sx={{
                 color: "#FFF",
                 "@media (max-width: 990px)": { fontSize: 14 },

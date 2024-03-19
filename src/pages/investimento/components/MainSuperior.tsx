@@ -1,18 +1,16 @@
 import { Box, Grid, Typography } from "@mui/material";
-import localFont from "@next/font/local";
+import { Outfit } from 'next/font/google'
 
-const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"] })
 
 function MainSuperior() {
   return (
     <>
       <Grid container>
         <Box sx={{ margin: 'auto'}}>
-          <Typography variant="h1" color="#FF2700" className={openSansExtraBold.className} sx={{ fontWeight: 'bold', "@media (max-width: 5570px)": {textAlign: 'center'}  }}>Quero Investir</Typography>
+          <Typography variant="h1" color="#FF2700" className={outfit.className} sx={{ fontWeight: 'bold', "@media (max-width: 5570px)": {textAlign: 'center'}  }}>Quero Investir</Typography>
         </Box>
-        <Box sx={{ margin: 'auto', textAlign: 'center', width: '80%' }}>
+        <Box sx={{ margin: 'auto', textAlign: 'center', width: '80%' }} className={outfit.className}>
           <Typography variant='h6'>
             O mercado imobiliário é historicamente reconhecido como uma
             alternativa segura, estável e altamente rentável de investimento. Os

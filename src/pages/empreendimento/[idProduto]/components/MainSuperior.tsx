@@ -2,13 +2,12 @@ import * as React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
 import Image from "next/image";
-import localFont from "@next/font/local";
 import { useState } from "react";
+import { Outfit } from 'next/font/google'
+import { sxUnicGreatBox } from "@/styles/stylesEmpreendimento";
 import { useRouter } from "next/router";
 
-const openSansExtraBold = localFont({
-  src: "../../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"], weight: '300' })
 
 interface Produto {
   titulo: string;
@@ -85,7 +84,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
         <Box ml={1} mt={4}>
           <Typography
             sx={{ color: "#FFF" }}
-            className={openSansExtraBold.className}
+            className={outfit.className}
             variant="h3"
           >
             {apiInformations && apiInformations.length > 0 ? apiInformations[0] : 'Titulo'}
@@ -94,7 +93,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
         <Box ml={1} mb={2}>
           <Typography
             sx={{ color: "#FFF" }}
-            className={openSansExtraBold.className}
+            className={outfit.className}
             variant="h6"
           >
             Com lazer premium e integrado a uma nova praça memorial de {apiInformations && apiInformations.length > 0 ? apiInformations[4] : ''}m²
@@ -103,16 +102,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
         <Box
           mb={2}
           ml={1}
-          sx={{
-            display: "flex",
-            boxSizing: "border-box",
-            background: "#FFF",
-            borderRadius: "20px",
-            alignItems: "center",
-            gap: 2,
-            width: "290px",
-            height: "35px",
-          }}
+          sx={sxUnicGreatBox}
         >
           <Image
             src="/vetor.svg"
@@ -120,8 +110,8 @@ function MainSuperior({ apiInformations }: ApiInformations) {
             height={25}
             alt="Picture of the author"
           />
-          <Typography className={openSansExtraBold.className} sx={{ color: "#111820" }} variant="h6">
-          {apiInformations && apiInformations.length > 0 ? apiInformations[2] : ''}
+          <Typography className={outfit.className} sx={{ color: "#111820" }} variant="h6">
+            {apiInformations[2]}
           </Typography>
         </Box>
       </Grid>

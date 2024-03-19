@@ -13,7 +13,7 @@ export const sxButtonStyle: SxProps<Theme> = {
   border: "none",
   height: "5.0vh",
   fontSize: 16,
-  fontweight: 'bold',
+  fontweight: "bold",
 };
 
 export const sxButtonMaior: SxProps<Theme> = {
@@ -41,7 +41,6 @@ export const sxListStyle: SxProps<Theme> = {
   textTransform: "none",
 };
 
-
 export const sxButtonHeader: SxProps<Theme> = {
   display: "flex",
   justifyContent: "center",
@@ -58,5 +57,46 @@ export const sxButtonHeader: SxProps<Theme> = {
   fontSize: 16,
   "&:hover": {
     backgroundColor: "#FF2700",
+  },
+};
+
+export const sxUnicGreatBox: SxProps<Theme> = {
+  display: "flex",
+  boxSizing: "border-box",
+  background: "#FFF",
+  borderRadius: "20px",
+  alignItems: "center",
+  gap: 2,
+  width: "290px",
+  height: "35px",
+};
+
+export const sxGreatGridItem: SxProps<Theme> = {
+  display: "flex",
+  margin: "auto",
+  boxSizing: "border-box",
+  position: "relative",
+  height: "115px",
+  background: "#242424",
+  border: "1px solid #FFFFFF",
+  borderRadius: "12px",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 10,
+  "@media (max-width: 990px)": { gap: 5 },
+  "@media (max-width: 500px)": { gap: 3, ml: 1, mr: 1 },
+};
+
+export const sxStyleHeader: SxProps<Theme> = {
+  color: "#000",
+  display: "block",
+  fontWeight: "bold",
+  lineHeight: "normal",
+  fontSize: "16px",
+  letterSpacing: "0.1rem",
+  textTransform: "uppercase",
+  textDecoration: "none",
+  "@media (max-width: 600px)": {
+    fontSize: "10px",
   },
 };

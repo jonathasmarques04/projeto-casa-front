@@ -1,11 +1,9 @@
 import { Grid, Typography } from "@mui/material";
 
 import Image from "next/image";
-import localFont from "@next/font/local";
+import { Outfit } from 'next/font/google'
 
-const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"], weight: "400" })
 
 function MainSuperior() {
   return (
@@ -17,7 +15,7 @@ function MainSuperior() {
           <Typography
             variant="h1"
             color="#FF2700"
-            className={openSansExtraBold.className}
+            className={outfit.className}
             sx={{ 
               fontWeight: 'bold',
               "@media (max-width: 990px)": { textAlign: 'center' }
@@ -25,7 +23,7 @@ function MainSuperior() {
           >
             Um novo jeito de construir
           </Typography>
-          <Typography variant="inherit" className={openSansExtraBold.className} sx={{ letterSpacing: '-0.02em', fontWeight: 'bold', fontSize: '18px', "@media (max-width: 990px)": { textAlign: 'center' } }}>
+          <Typography variant="inherit" className={outfit.className} sx={{ letterSpacing: '-0.02em', fontWeight: 'bold', fontSize: '18px', "@media (max-width: 990px)": { textAlign: 'center' } }}>
             Nossos projetos são baseados em criatividade, inovação,
             funcionalidade e funcionalidade. Ao integrar esses princípios,
             reforçamos nosso compromisso com práticas construtivas responsáveis,

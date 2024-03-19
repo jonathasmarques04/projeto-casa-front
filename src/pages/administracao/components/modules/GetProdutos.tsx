@@ -4,6 +4,7 @@ import {
   TableCell,
   TableRow,
   Typography,
+  TableHead,
 } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -43,9 +44,20 @@ function ProdutosCadastrados() {
   };
 
   return (
-    <Grid container xs={12}>
+    <Grid xs={12}>
       <Typography variant="h5">Produtos Cadastrados</Typography>
-      <TableBody id="tabela-produtos" >
+      <TableBody id="tabela-produtos">
+        <TableRow>
+          <TableCell>ID do Produto</TableCell>
+          <TableCell>Título</TableCell>
+          <TableCell>Quartos</TableCell>
+          <TableCell>Suítes</TableCell>
+          <TableCell>Banheiros</TableCell>
+          <TableCell>Área Útil</TableCell>
+          <TableCell>Área Total</TableCell>
+          <TableCell>Localização</TableCell>
+          <TableCell>Imagem</TableCell>
+        </TableRow>
         {produtos.map((produtos, index) => (
           <TableRow key={index}>
             <TableCell>{produtos.idProduto}</TableCell>

@@ -5,8 +5,8 @@ import MainInput from "./components/MainInput";
 import Header from "./components/Header";
 import CardInput, { fetchCard } from "./components/Card";
 
-import Footer from "./components/Footer";
 import Head from "next/head";
+import Footer from "@/components/Footer";
 
 function Home() {
   const [apiCard, setApiCard] = useState<string[]>([]);

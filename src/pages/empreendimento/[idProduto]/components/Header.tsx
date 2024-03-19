@@ -10,13 +10,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
 import Image from "next/image";
-import localFont from "@next/font/local";
 import { Grid } from "@mui/material";
 import { sxButtonHeader } from "../../../../styles/stylesHome";
+import { Outfit } from 'next/font/google'
+import { sxStyleHeader } from "@/styles/stylesEmpreendimento";
 
-const openSansExtraBold = localFont({
-  src: "../../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"], weight: '500' })
 
 const pages = ["Informações", "galeria"];
 
@@ -110,7 +109,7 @@ function Header() {
           >
             {pages.map((page) => (
               <MenuItem
-              className={openSansExtraBold.className}
+              className={outfit.className}
               sx={{ fontWeight: "500" }}
               key={page}
               onClick={handleCloseNavMenu}
@@ -129,7 +128,7 @@ function Header() {
 
         <Box
           component="a"
-          href="#app-bar-with-responsive-menu"
+          href="/"
           sx={{
             display: { xs: "flex", md: "none" },
             fontFamily: "monospace",
@@ -160,22 +159,10 @@ function Header() {
         >
           {pages.map((page) => (
             <Button
-              className={openSansExtraBold.className}
+              className={outfit.className}
               key={page}
               onClick={handleCloseNavMenu}
-              sx={{
-                color: "#000",
-                display: "block",
-                fontWeight: "bold",
-                lineHeight: "normal",
-                fontSize: "16px",
-                letterSpacing: "0.1rem",
-                textTransform: "uppercase",
-                textDecoration: "none",
-                "@media (max-width: 600px)": {
-                  fontSize: "10px",
-                },
-              }}
+              sx={sxStyleHeader}
               href={`#${page.toLocaleLowerCase()}`}
             >
               {page}
@@ -186,7 +173,7 @@ function Header() {
           <Tooltip title="Fale conosco">
             <Button
               sx={sxButtonHeader}
-              className={openSansExtraBold.className}
+              className={outfit.className}
               disableElevation
               variant="contained"
               href="https://contate.me/casa-construtora1"

@@ -5,10 +5,10 @@ import MainSuperior, {
 } from "./components/MainSuperior";
 import MainCentral, { fetchInformacoesApi } from "./components/MainCentral";
 import Carrossel, { fetchImagensDaAPI } from "./components/MainCarrossel";
-import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Footer from "@/components/Footer";
 
 function Empreendimento() {
   const [apiInformation, setApiInformation] = useState<string[]>([]);

@@ -66,7 +66,7 @@ import {
     };
   
     return (
-      <Grid container>
+      <Grid>
           <Typography variant="h5">Excluir Produto</Typography>
           <form id="form-exclusao" onSubmit={excluirProduto}>
             <TextField

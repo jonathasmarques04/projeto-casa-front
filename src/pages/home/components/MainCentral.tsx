@@ -1,12 +1,10 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 
 import Image from "next/image";
-import localFont from "@next/font/local";
 import { sxButtonMaior } from "../../../styles/stylesHome";
+import { Outfit } from 'next/font/google'
 
-const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"], weight: "500" })
 
 const informacoesPrincipal: {
   [key: string]: { src: string; tipografia: string };
@@ -58,7 +56,7 @@ function MainCentral() {
           color="error"
           variant="contained"
           sx={sxButtonMaior}
-          className={openSansExtraBold.className}
+          className={outfit.className}
         >
           CONHEÇA A CASA
         </Button>
@@ -67,6 +65,7 @@ function MainCentral() {
           m={"auto"}
           my={4}
           sx={{ width: "90%", color: "#111820", fontSize: "2.5vh" }}
+          className={outfit.className}
         >
           A <span style={{ color: "#FF2700" }}>Construtora Carvalho de Sá</span>{" "}
           nasce da ideia de trazer uma nova forma de criar e gerenciar
@@ -104,7 +103,7 @@ function MainCentral() {
               />
             </Box>
             <Box>
-              <Typography variant="caption" sx={{ color: "#111820" }}>
+              <Typography variant="caption" sx={{ color: "#111820", fontWeight: '700', fontSize: '14px'}} className={outfit.className}>
                 {informacoesPrincipal[key].tipografia}
               </Typography>
             </Box>
@@ -118,7 +117,7 @@ function MainCentral() {
           color="error"
           variant="contained"
           sx={sxButtonMaior}
-          className={openSansExtraBold.className}
+          className={outfit.className}
           id="o que fazemos"
         >
           O QUE FAZEMOS?
@@ -154,7 +153,7 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Typography variant="caption" sx={{ color: "#111820" }}>
+            <Typography variant="caption" sx={{ color: "#111820", fontWeight: '700', fontSize: '14px'}} className={outfit.className}>
               {informacoesSecundario[key].tipografia}
             </Typography>
           </Grid>

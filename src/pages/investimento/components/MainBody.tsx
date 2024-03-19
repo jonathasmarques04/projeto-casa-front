@@ -1,12 +1,12 @@
 import React from "react";
-import { Box, Button, Grid, Typography } from "@mui/material";
-import localFont from "@next/font/local";
+import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import { styleGrayBox, styleTypography, sxGridContainerFade } from "../../../styles/stylesInvestimento";
+import {
+  sxGridContainerFade,
+} from "../../../styles/stylesInvestimento";
+import { Outfit } from 'next/font/google'
 
-const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"] })
 
 const informacoes = [
   {
@@ -43,28 +43,47 @@ function MainBody() {
           width="80%"
           display={"flex"}
           position={"relative"}
-          sx={{ "@media (max-width: 1370px)": { width: '90%',borderRadius: '0px 30px 30px 0px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
+          sx={{
+            "@media (max-width: 1370px)": {
+              width: "90%",
+              borderRadius: "0px 30px 30px 0px",
+            },
+            "@media (max-width: 764px)": {
+              width: "100%",
+              borderRadius: "30px",
+            },
+            "@media (max-width: 688px)": { height: 300 },
+            "@media (max-width: 527px)": { height: 400 },
+          }}
         >
-          <Box sx={{ margin: "auto", ml: 10, "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
-            <Typography variant="h4" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 24 }  }}>
+          <Box
+            sx={{
+              margin: "auto",
+              ml: 10,
+              "@media (max-width: 764px)": { margin: 2, textAlign: "center" },
+            }}
+          >
+            <Typography
+              variant="h4"
+              color={"white"}
+              sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }}
+              className={outfit.className}
+            >
               {informacoes[0].titulo}
             </Typography>
-            <Typography variant="subtitle1" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}>
+            <Typography
+              variant="subtitle1"
+              color={"white"}
+              sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}
+              className={outfit.className}
+            >
               {informacoes[0].descricao}
             </Typography>
-            <Button
-              color="inherit"
-              className={openSansExtraBold.className}
-              sx={{ color: "#FF2700", mt: 2 }}
-              variant="contained"
-            >
-              Saiba Mais
-            </Button>
           </Box>
           <Box
             sx={{
               margin: "auto",
-              "@media (max-width: 877px)": { display: 'none' }
+              "@media (max-width: 877px)": { display: "none" },
             }}
           >
             <Image
@@ -74,7 +93,7 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
+          <Box sx={{ "@media (max-width: 877px)": { display: "none" } }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -94,9 +113,25 @@ function MainBody() {
           ml={"auto"}
           mr={"0"}
           position={"relative"}
-          sx={{ "@media (max-width: 1370px)": { width: '90%', borderRadius: '30px 0px 0px 30px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
+          sx={{
+            "@media (max-width: 1370px)": {
+              width: "90%",
+              borderRadius: "30px 0px 0px 30px",
+            },
+            "@media (max-width: 764px)": {
+              width: "100%",
+              borderRadius: "30px",
+            },
+            "@media (max-width: 688px)": { height: 300 },
+            "@media (max-width: 527px)": { height: 400 },
+          }}
         >
-          <Box sx={{ "@media (max-width: 877px)": { display: 'none' }, right: "93.3%" }}>
+          <Box
+            sx={{
+              "@media (max-width: 877px)": { display: "none" },
+              right: "93.3%",
+            }}
+          >
             <Image
               src="/subtract.png"
               width={100}
@@ -105,12 +140,17 @@ function MainBody() {
               style={{
                 position: "absolute",
                 top: 0,
-                
+
                 transform: "scaleX(-1)",
               }}
             />
           </Box>
-          <Box sx={{ margin: "auto", "@media (max-width: 877px)": { display: 'none' } }}>
+          <Box
+            sx={{
+              margin: "auto",
+              "@media (max-width: 877px)": { display: "none" },
+            }}
+          >
             <Image
               src="/financiamento.svg"
               width={100}
@@ -118,22 +158,30 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={{ margin: "auto", ml: 10, flexDirection: 'column', "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
-            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }} variant="h4" color={"white"}>
+          <Box
+            sx={{
+              margin: "auto",
+              ml: 10,
+              flexDirection: "column",
+              "@media (max-width: 764px)": { margin: 2, textAlign: "center" },
+            }}
+          >
+            <Typography
+              sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }}
+              variant="h4"
+              color={"white"}
+              className={outfit.className}
+            >
               {informacoes[1].titulo}
             </Typography>
-            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }} variant="subtitle1" color={"white"}>
+            <Typography
+              sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}
+              variant="subtitle1"
+              color={"white"}
+              className={outfit.className}
+            >
               {informacoes[1].descricao}
             </Typography>
-            <Button
-              color="inherit"
-              className={openSansExtraBold.className}
-              sx={{ color: "#FF2700", mt: 2, alignSelf: 'flex-end'}}
-              variant="contained"
-              
-            >
-              Saiba Mais
-            </Button>
           </Box>
         </Grid>
         <Grid
@@ -144,28 +192,47 @@ function MainBody() {
           width="80%"
           display={"flex"}
           position={"relative"}
-          sx={{ "@media (max-width: 1370px)": { width: '90%',borderRadius: '0px 30px 30px 0px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 }, "@media (max-width: 527px)": { height: 400 } }}
+          sx={{
+            "@media (max-width: 1370px)": {
+              width: "90%",
+              borderRadius: "0px 30px 30px 0px",
+            },
+            "@media (max-width: 764px)": {
+              width: "100%",
+              borderRadius: "30px",
+            },
+            "@media (max-width: 688px)": { height: 300 },
+            "@media (max-width: 527px)": { height: 400 },
+          }}
         >
-          <Box sx={{ margin: "auto", ml: 10, "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
-            <Typography variant="h4" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 24 }  }}>
+          <Box
+            sx={{
+              margin: "auto",
+              ml: 10,
+              "@media (max-width: 764px)": { margin: 2, textAlign: "center" },
+            }}
+          >
+            <Typography
+              variant="h4"
+              color={"white"}
+              sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }}
+              className={outfit.className}
+            >
               {informacoes[2].titulo}
             </Typography>
-            <Typography variant="subtitle1" color={"white"} sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}>
+            <Typography
+              variant="subtitle1"
+              color={"white"}
+              sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}
+              className={outfit.className}
+            >
               {informacoes[2].descricao}
             </Typography>
-            <Button
-              color="inherit"
-              className={openSansExtraBold.className}
-              sx={{ color: "#FF2700", mt: 2 }}
-              variant="contained"
-            >
-              Saiba Mais
-            </Button>
           </Box>
           <Box
             sx={{
               margin: "auto",
-              "@media (max-width: 877px)": { display: 'none' }
+              "@media (max-width: 877px)": { display: "none" },
             }}
           >
             <Image
@@ -175,7 +242,7 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={{ "@media (max-width: 877px)": { display: 'none' } }}>
+          <Box sx={{ "@media (max-width: 877px)": { display: "none" } }}>
             <Image
               src="/subtract.png"
               width={100}
@@ -196,9 +263,24 @@ function MainBody() {
           mr={"0"}
           mb={6}
           position={"relative"}
-          sx={{ "@media (max-width: 1370px)": { width: '90%', borderRadius: '30px 0px 0px 30px' }, "@media (max-width: 764px)": { width: '100%', borderRadius: '30px' }, "@media (max-width: 688px)": { height: 300 } }}
+          sx={{
+            "@media (max-width: 1370px)": {
+              width: "90%",
+              borderRadius: "30px 0px 0px 30px",
+            },
+            "@media (max-width: 764px)": {
+              width: "100%",
+              borderRadius: "30px",
+            },
+            "@media (max-width: 688px)": { height: 300 },
+          }}
         >
-          <Box sx={{ "@media (max-width: 877px)": { display: 'none' }, right: "93.3%", }}>
+          <Box
+            sx={{
+              "@media (max-width: 877px)": { display: "none" },
+              right: "93.3%",
+            }}
+          >
             <Image
               src="/subtract.png"
               width={100}
@@ -211,7 +293,12 @@ function MainBody() {
               }}
             />
           </Box>
-          <Box sx={{ margin: "auto", "@media (max-width: 877px)": { display: 'none' } }}>
+          <Box
+            sx={{
+              margin: "auto",
+              "@media (max-width: 877px)": { display: "none" },
+            }}
+          >
             <Image
               src="/pig.svg"
               width={100}
@@ -219,22 +306,30 @@ function MainBody() {
               alt="Picture of the author"
             />
           </Box>
-          <Box sx={{ margin: "auto", ml: 10, flexDirection: 'column', "@media (max-width: 764px)": { margin: 2, textAlign: 'center' }}}>
-            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }} variant="h4" color={"white"}>
+          <Box
+            sx={{
+              margin: "auto",
+              ml: 10,
+              flexDirection: "column",
+              "@media (max-width: 764px)": { margin: 2, textAlign: "center" },
+            }}
+          >
+            <Typography
+              sx={{ "@media (max-width: 1370px)": { fontSize: 24 } }}
+              variant="h4"
+              color={"white"}
+              className={outfit.className}
+            >
               {informacoes[3].titulo}
             </Typography>
-            <Typography sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }} variant="subtitle1" color={"white"}>
+            <Typography
+              sx={{ "@media (max-width: 1370px)": { fontSize: 14 } }}
+              variant="subtitle1"
+              color={"white"}
+              className={outfit.className}
+            >
               {informacoes[3].descricao}
             </Typography>
-            <Button
-              color="inherit"
-              className={openSansExtraBold.className}
-              sx={{ color: "#FF2700", mt: 2, alignSelf: 'flex-end'}}
-              variant="contained"
-              
-            >
-              Saiba Mais
-            </Button>
           </Box>
         </Grid>
       </Grid>

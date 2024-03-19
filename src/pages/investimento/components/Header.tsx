@@ -1,23 +1,18 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 
 import Image from "next/image";
-import localFont from "next/font/local";
 import { Grid } from "@mui/material";
 import { sxButtonHeader } from "@/styles/stylesHome";
 
-const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
-});
+import { Outfit } from 'next/font/google'
+import { sxContainer, sxToolBarTypography, sxToolBarTypographyLogo } from "@/styles/stylesInvestimento";
+
+const outfit = Outfit({ subsets: ["latin"] })
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -35,29 +30,14 @@ function Header() {
   return (
     <Grid
       container
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        margin: "auto",
-        flexWrap: "nowrap",
-        flexDirection: "column",
-        width: "90%",
-      }}
+      sx={sxContainer}
     >
       <Toolbar disableGutters sx={{ gap: 12 }}>
         <Typography
           variant="h6"
           component="a"
           href="/"
-          sx={{
-            mr: 2,
-            display: { xs: "none", md: "flex" },
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
+          sx={sxToolBarTypography}
         >
           <Image
             src="/logo.svg"
@@ -70,15 +50,7 @@ function Header() {
           variant="h5"
           component="a"
           href="/"
-          sx={{
-            display: { xs: "flex", md: "none" },
-            flexGrow: 1,
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
+          sx={sxToolBarTypographyLogo}
         >
           <Image
             src="/logo.svg"
@@ -92,7 +64,7 @@ function Header() {
           <Tooltip title="Fale conosco">
             <Button
               sx={sxButtonHeader}
-              className={openSansExtraBold.className}
+              className={outfit.className}
               disableElevation
               variant="contained"
               href="https://contate.me/casa-construtora1"

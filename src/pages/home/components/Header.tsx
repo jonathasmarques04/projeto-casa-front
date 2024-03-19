@@ -10,15 +10,11 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
 import Image from "next/image";
-import localFont from "next/font/local";
 import { sxButtonHeader } from "../../../styles/stylesHome";
 import { Grid } from "@mui/material";
+import { Outfit } from 'next/font/google'
 
-const openSansExtraBold = localFont({
-  src: "../../../../public/Causten-Regular.otf",
-});
-
-const fonte = localFont({ src: "../../../../public/Causten-Regular.otf" });
+const outfit = Outfit({ subsets: ["latin"], weight: '500' })
 
 const pages = ["Sobre", "O que fazemos", "Investimento", "Imóveis"];
 
@@ -117,7 +113,7 @@ function Header() {
           >
             {pages.map((page) => (
               <MenuItem
-              className={openSansExtraBold.className}
+              className={outfit.className}
               sx={{ fontWeight: "500" }}
               key={page}
               onClick={handleCloseNavMenu}
@@ -133,12 +129,10 @@ function Header() {
             ))}
           </Menu>
         </Box>
-
         <Box
           component="a"
-          href="#app-bar-with-responsive-menu"
           sx={{
-            
+            cursor: 'pointer',
             display: { xs: "flex", md: "none" },
             fontFamily: "monospace",
             fontWeight: 700,
@@ -167,14 +161,14 @@ function Header() {
         >
           {pages.map((page) => (
             <Button
-              className={openSansExtraBold.className}
+              className={outfit.className}
               key={page}
               onClick={handleCloseNavMenu}
               sx={{
                 margin: 'auto',
                 color: "#000",
                 display: "block",
-                fontWeight: "bold",
+                fontWeight: "500",
                 lineHeight: "normal",
                 fontSize: "16px",
                 letterSpacing: "0.1rem",
@@ -202,7 +196,7 @@ function Header() {
           <Tooltip title="Fale conosco">
             <Button
               sx={sxButtonHeader}
-              className={openSansExtraBold.className}
+              className={outfit.className}
               disableElevation
               variant="contained"
               href="https://contate.me/casa-construtora1"

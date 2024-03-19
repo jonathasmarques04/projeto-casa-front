@@ -3,15 +3,13 @@ import { Grid, Slide, Box, Button } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-import localFont from "@next/font/local";
 import Image from "next/image";
 import { sxButtonMaior } from "../../../../styles/stylesEmpreendimento";
 
 import { useState } from "react";
+import { Outfit } from 'next/font/google'
 
-const openSansExtraBold = localFont({
-  src: "../../../../../public/Causten-Regular.otf",
-});
+const outfit = Outfit({ subsets: ["latin"], weight: '500' })
 
 interface Produto {
   imagem: string;
@@ -89,7 +87,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
           color="error"
           variant="contained"
           sx={sxButtonMaior}
-          className={openSansExtraBold.className}
+          className={outfit.className}
           id="galeria"
         >
           GALERIA
