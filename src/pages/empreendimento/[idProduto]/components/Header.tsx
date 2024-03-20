@@ -107,7 +107,7 @@ function Header() {
             {pages.map((page) => (
               <MenuItem
               className={outfit.className}
-              sx={{ fontWeight: "500" }}
+              sx={{ fontWeight: "400" }}
               key={page}
               onClick={handleCloseNavMenu}
               component="a"
@@ -128,8 +128,7 @@ function Header() {
           href="/"
           sx={{
             display: { xs: "flex", md: "none" },
-            fontFamily: "monospace",
-            fontWeight: 700,
+            fontWeight: 400,
             color: "inherit",
             textDecoration: "none",
             "@media (max-width: 600px)": {
