@@ -4,8 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <link rel="icon" href="/logo-icon.svg" />
-      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"></link>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
       <body style={{ margin: '0' }}>
         <Main />
         <NextScript />
