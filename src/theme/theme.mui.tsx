@@ -10,7 +10,7 @@ const theme = createTheme({
       color: "#FF2700",
     },
     h6: {
-        fontWeight: 700,
+        fontWeight: 500,
         color: "inherit",
     },
     subtitle2: {
@@ -18,11 +18,11 @@ const theme = createTheme({
     },
     caption: {
       color: "#111820",
-      fontWeight: "700",
+      fontWeight: 500,
       fontSize: "14px",
     },
     body1: {
-        fontWeight: 600
+        fontWeight: 300
     }
   },
 });
