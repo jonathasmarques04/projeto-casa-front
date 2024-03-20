@@ -12,9 +12,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Image from "next/image";
 import { sxButtonHeader } from "../../../styles/stylesHome";
 import { Grid } from "@mui/material";
-import { Outfit } from 'next/font/google'
+import { Outfit } from "next/font/google";
 
-const outfit = Outfit({ subsets: ["latin"], weight: '500' })
+const outfit = Outfit({ subsets: ["latin"], weight: "500" });
 
 const pages = ["Sobre", "O que fazemos", "Investimento", "Imóveis"];
 
@@ -67,11 +67,8 @@ function Header() {
           href="/"
           sx={{
             mr: 2,
-            display: { xs: "none", md: "none", lg: 'flex' },
-            fontFamily: "monospace",
-            fontWeight: 700,
+            display: { xs: "none", md: "none", lg: "flex" },
             letterSpacing: ".3rem",
-            color: "inherit",
             textDecoration: "none",
           }}
         >
@@ -82,7 +79,7 @@ function Header() {
             alt="Picture of the author"
           />
         </Typography>
-        <Box sx={{ flexGrow: 1, display: { xs: 12, md: "flex", lg: 'none' } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: 12, md: "flex", lg: "none" } }}>
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -113,26 +110,26 @@ function Header() {
           >
             {pages.map((page) => (
               <MenuItem
-              className={outfit.className}
-              sx={{ fontWeight: "500" }}
-              key={page}
-              onClick={handleCloseNavMenu}
-              component="a"
-              href={
-                page === "Investimento"
-                  ? "/investimento"
-                  : `#${page.toLocaleLowerCase()}`
-              }
-            >
-              <Typography textAlign="center">{page}</Typography>
-            </MenuItem>
+                className={outfit.className}
+                sx={{ fontWeight: "500" }}
+                key={page}
+                onClick={handleCloseNavMenu}
+                component="a"
+                href={
+                  page === "Investimento"
+                    ? "/investimento"
+                    : `#${page.toLocaleLowerCase()}`
+                }
+              >
+                <Typography textAlign="center">{page}</Typography>
+              </MenuItem>
             ))}
           </Menu>
         </Box>
         <Box
           component="a"
           sx={{
-            cursor: 'pointer',
+            cursor: "pointer",
             display: { xs: "flex", md: "none" },
             fontFamily: "monospace",
             fontWeight: 700,
@@ -156,7 +153,7 @@ function Header() {
         <Box
           sx={{
             flexGrow: 1,
-            display: { xs: "none", md: "none", lg: 'flex' },
+            display: { xs: "none", md: "none", lg: "flex" },
           }}
         >
           {pages.map((page) => (
@@ -165,7 +162,7 @@ function Header() {
               key={page}
               onClick={handleCloseNavMenu}
               sx={{
-                margin: 'auto',
+                margin: "auto",
                 color: "#000",
                 display: "block",
                 fontWeight: "500",
@@ -176,7 +173,7 @@ function Header() {
                 textDecoration: "none",
                 "@media (max-width: 1490px)": {
                   fontSize: "14px",
-                  margin: '0px'
+                  margin: "0px",
                 },
                 "@media (max-width: 600px)": {
                   fontSize: "10px",

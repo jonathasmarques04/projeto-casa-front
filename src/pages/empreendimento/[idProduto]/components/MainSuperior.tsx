@@ -110,7 +110,7 @@ function MainSuperior({ apiInformations }: ApiInformations) {
             height={25}
             alt="Picture of the author"
           />
-          <Typography className={outfit.className} sx={{ color: "#111820" }} variant="h6">
+          <Typography variant="h6" className={outfit.className} sx={{ color: "#111820" }}>
           {apiInformations && apiInformations.length > 0 ? apiInformations[2] : ''}
           </Typography>
         </Box>

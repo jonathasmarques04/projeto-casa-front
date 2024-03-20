@@ -153,13 +153,13 @@ function CardInput({ apiInformations }: ApiInformations) {
                       <Typography gutterBottom variant="h6" className={outfit.className} component="div">
                         {produtos.titulo}
                       </Typography>
-                      <Typography variant="body1" className={outfit.className} fontWeight={'600'} color="text.secondary">
+                      <Typography variant="body1" className={outfit.className} color="text.secondary">
                         {produtos.suites} { produtos.suites == '1' ? 'suíte' : 'suítes' }
                       </Typography>
-                      <Typography variant="body1" className={outfit.className} fontWeight={'600'} color="text.secondary">
+                      <Typography variant="body1" className={outfit.className} color="text.secondary">
                         {produtos.areaTotal}m²
                       </Typography>
-                      <Typography variant="body1" className={outfit.className} fontWeight={'600'} color="text.secondary">
+                      <Typography variant="body1" className={outfit.className} color="text.secondary">
                         {produtos.localizacao}
                       </Typography>
                     </CardContent>

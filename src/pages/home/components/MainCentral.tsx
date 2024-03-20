@@ -103,7 +103,7 @@ function MainCentral() {
               />
             </Box>
             <Box>
-              <Typography variant="caption" sx={{ color: "#111820", fontWeight: '700', fontSize: '14px'}} className={outfit.className}>
+              <Typography variant="caption" className={outfit.className}>
                 {informacoesPrincipal[key].tipografia}
               </Typography>
             </Box>
@@ -153,7 +153,7 @@ function MainCentral() {
                 alt="Picture of the author"
               />
             </Box>
-            <Typography variant="caption" sx={{ color: "#111820", fontWeight: '700', fontSize: '14px'}} className={outfit.className}>
+            <Typography variant="caption" className={outfit.className}>
               {informacoesSecundario[key].tipografia}
             </Typography>
           </Grid>
