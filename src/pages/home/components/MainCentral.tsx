@@ -30,17 +30,17 @@ const informacoesSecundario: {
   [key: string]: { src: string; tipografia: string };
 } = {
   informacoes1: {
-    src: "/conforto.svg",
+    src: "/reformas.svg",
     tipografia:
       "Realizamos reformas dos mais variados portes, por meio de equipe especializada e supervisionada por arquitetos e engenheiros. Os trabalhos são realizados de acordo com projeto idealizado em BIM (Building Information Modeling), capaz de antecipar, a partir das características físicas e funcionais da obra, o quantitativo de materiais e custos diretos e indiretos envolvidos. ",
   },
   informacoes2: {
-    src: "/tecnologia.svg",
+    src: "/martelo.svg",
     tipografia:
       "Somos especialistas em construção! Sabemos que construir não é uma tarefa fácil. Por isso, estamos aqui para assumir essa tarefa por você. Contamos com um time técnico de engenheiros, arquitetos e construtores que atuam desde a concepção do projeto até a conclusão das obras, no modelo de empreitada ou administração.",
   },
   informacoes3: {
-    src: "/personalizacao.svg",
+    src: "/investimento.svg",
     tipografia:
       "O mercado imobiliário é historicamente reconhecido como uma alternativa segura, estável e altamente rentável de investimento. Os maiores investidores do mundo possuem boa parte do seu patrimônio alocado em imóveis. Seja você também um investidor do mercado imobiliário com a Ca.Sa Construtora!",
   },

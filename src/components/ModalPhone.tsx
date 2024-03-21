@@ -61,7 +61,7 @@ function Modal() {
           }}
         >
           <Typography sx={{ width: "100%" }}>
-            <Box sx={{ backgroundColor: "#0DC153", mb: 2, height: "6vh" }}>
+            <Box sx={{ backgroundColor: "#0DC153", mb: 2, height: "6vh", "@media (max-width: 500px)": { height: '10vh' } }}>
               <Typography variant="h6" ml={2} color={"white"}>
                 Olá! Clique em um dos nossos atendentes para ser atendido.
               </Typography>

@@ -93,7 +93,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
           GALERIA
         </Button>
       </Grid>
-      <Grid item sx={{ margin: "auto" }}>
+      <Grid item sx={{ margin: "auto", mb: 5 }}>
         <Box mt={12} display="flex" justifyContent="center">
           <Box display="flex" alignItems="center" justifyContent="center">
             <Button
