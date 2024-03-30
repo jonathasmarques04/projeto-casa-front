@@ -51,11 +51,16 @@ function MainBody() {
             "@media (max-width: 764px)": {
               width: "100%",
               borderRadius: "30px",
+              height: 225
             },
-            "@media (max-width: 688px)": { height: 300 },
-            "@media (max-width: 527px)": { height: 400 },
-          }}
-        >
+            
+            "@media (max-width: 650px)": { height: 250 },
+            "@media (max-width: 550px)": { height: 275 },
+            "@media (max-width: 470px)": { height: 300 },
+            "@media (max-width: 380px)": { height: 350 },
+            "@media (max-width: 355px)": { height: 370 },
+            "@media (max-width: 330px)": { height: 380 },
+          }}>
           <Box
             sx={{
               margin: "auto",
@@ -122,8 +127,12 @@ function MainBody() {
               width: "100%",
               borderRadius: "30px",
             },
-            "@media (max-width: 688px)": { height: 300 },
-            "@media (max-width: 527px)": { height: 400 },
+            "@media (max-width: 650px)": { height: 200 },
+            "@media (max-width: 550px)": { height: 250 },
+            "@media (max-width: 470px)": { height: 300 },
+            "@media (max-width: 380px)": { height: 350 },
+            "@media (max-width: 355px)": { height: 370 },
+            "@media (max-width: 330px)": { height: 380 },
           }}
         >
           <Box
@@ -200,9 +209,12 @@ function MainBody() {
             "@media (max-width: 764px)": {
               width: "100%",
               borderRadius: "30px",
-            },
-            "@media (max-width: 688px)": { height: 300 },
-            "@media (max-width: 527px)": { height: 400 },
+            },"@media (max-width: 650px)": { height: 250 },
+            "@media (max-width: 550px)": { height: 275 },
+            "@media (max-width: 470px)": { height: 300 },
+            "@media (max-width: 380px)": { height: 350 },
+            "@media (max-width: 355px)": { height: 370 },
+            "@media (max-width: 330px)": { height: 380 },
           }}
         >
           <Box
@@ -272,7 +284,10 @@ function MainBody() {
               width: "100%",
               borderRadius: "30px",
             },
-            "@media (max-width: 688px)": { height: 300 },
+            "@media (max-width: 780px)": { height: 175 },
+            "@media (max-width: 470px)": { height: 200 },
+            "@media (max-width: 420px)": { height: 250 },
+            "@media (max-width: 330px)": { height: 300 },
           }}
         >
           <Box

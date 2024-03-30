@@ -11,17 +11,18 @@ function MainSuperior() {
       <Grid item xs={12} ml={12} gap={8} display="flex" sx={{
         "@media (max-width: 990px)": { ml: 0 }
       }}>
-        <Grid item xs={12} md={12} mt={12}>
+        <Grid item xs={12} mt={12}>
           <Typography
             variant="h1"
             className={outfit.className}
             sx={{ 
-              "@media (max-width: 990px)": { textAlign: 'center' }
+              "@media (max-width: 990px)": { textAlign: 'center' },
+              "@media (max-width: 384px)": { fontSize: 80 }
            }}
           >
             Um novo jeito de construir
           </Typography>
-          <Typography variant="subtitle2" className={outfit.className} sx={{ letterSpacing: '-0.02em', "@media (max-width: 990px)": { textAlign: 'center' } }}>
+          <Typography variant="subtitle2" className={outfit.className} sx={{ letterSpacing: '-0.02em', "@media (max-width: 990px)": { textAlign: 'center', mb: 4 }, "@media (max-width: 642px)": {textAlign: '-moz-initial'} }}>
             Nossos projetos são baseados em criatividade, inovação,
             funcionalidade e funcionalidade. Ao integrar esses princípios,
             reforçamos nosso compromisso com práticas construtivas responsáveis,

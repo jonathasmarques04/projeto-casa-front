@@ -13,10 +13,10 @@ import CardMedia from "@mui/material/CardMedia";
 import SearchIcon from "@mui/icons-material/Search";
 
 import React, { useEffect, useState } from "react";
-import { Outfit } from 'next/font/google'
+import { Outfit } from "next/font/google";
 import Modal from "@/components/ModalPhone";
 
-const outfit = Outfit({ subsets: ["latin"], weight: '500' })
+const outfit = Outfit({ subsets: ["latin"], weight: "500" });
 
 interface Produto {
   idProduto: string;
@@ -92,16 +92,19 @@ function CardInput({ apiInformations }: ApiInformations) {
         p={8}
         display="flex"
         xs={12}
-        sx={{ textAlign: "center", "@media (max-width: 420px)": {
-          gap: 0,
-          p: 2
-        }, }}
+        sx={{
+          textAlign: "center",
+          "@media (max-width: 420px)": {
+            gap: 0,
+            p: 2,
+          },
+        }}
       >
         <Grid xs={12} md={6} item sx={{ margin: "auto" }}>
           <FormControl
-            sx={{ m: 0, width: "35ch", "@media (max-width: 320px)": {
-              width: '30ch',
-            }, }}
+            sx={{
+              m: 0,
+            }}
             color="error"
             variant="outlined"
           >
@@ -150,16 +153,34 @@ function CardInput({ apiInformations }: ApiInformations) {
                       title={produtos.titulo}
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h6" className={outfit.className} component="div">
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        className={outfit.className}
+                        component="div"
+                      >
                         {produtos.titulo}
                       </Typography>
-                      <Typography variant="body1" className={outfit.className} color="text.secondary">
-                        {produtos.suites} { produtos.suites == '1' ? 'suíte' : 'suítes' }
+                      <Typography
+                        variant="body1"
+                        className={outfit.className}
+                        color="text.secondary"
+                      >
+                        {produtos.suites}{" "}
+                        {produtos.suites == "1" ? "suíte" : "suítes"}
                       </Typography>
-                      <Typography variant="body1" className={outfit.className} color="text.secondary">
+                      <Typography
+                        variant="body1"
+                        className={outfit.className}
+                        color="text.secondary"
+                      >
                         {produtos.areaTotal}m²
                       </Typography>
-                      <Typography variant="body1" className={outfit.className} color="text.secondary">
+                      <Typography
+                        variant="body1"
+                        className={outfit.className}
+                        color="text.secondary"
+                      >
                         {produtos.localizacao}
                       </Typography>
                     </CardContent>

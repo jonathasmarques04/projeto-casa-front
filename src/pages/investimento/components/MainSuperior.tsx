@@ -10,7 +10,7 @@ function MainSuperior() {
         <Box sx={{ margin: 'auto'}}>
           <Typography variant="h1" className={outfit.className} sx={{ fontWeight: 'bold', "@media (max-width: 5570px)": {textAlign: 'center'}  }}>Quero Investir</Typography>
         </Box>
-        <Box sx={{ margin: 'auto', textAlign: 'center', width: '80%' }} className={outfit.className}>
+        <Box sx={{ margin: 'auto', textAlign: 'center', width: '80%', "@media (max-width: 642px)": {textAlign: '-moz-initial'} }} className={outfit.className}>
           <Typography variant='h5'>
             O mercado imobiliário é historicamente reconhecido como uma
             alternativa segura, estável e altamente rentável de investimento. Os
