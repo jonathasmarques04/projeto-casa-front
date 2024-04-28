@@ -40,7 +40,7 @@ export async function fetchCard(param: string): Promise<string[]> {
     }
 
     const data = await response.json();
-    const produtos: Produto = data.produto;
+    const produtos: Produto = data;
 
     const information: string[] = [
       produtos.idProduto,
@@ -75,7 +75,7 @@ function CardInput({ apiInformations }: ApiInformations) {
       const data = await response.json();
 
       if (data) {
-        setProdutos(data.produtos);
+        setProdutos(data);
       } else {
         console.log("Ocorreu um erro ao obter os produtos!");
       }
@@ -84,6 +84,8 @@ function CardInput({ apiInformations }: ApiInformations) {
     }
   };
 
+  console.log(produtos[7])
+  
   return (
     <Grid container>
       <Grid

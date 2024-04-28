@@ -34,7 +34,7 @@ function ProdutosCadastrados() {
       const data = await response.json();
 
       if (data) {
-        setProdutos(data.produtos);
+        setProdutos(data);
       } else {
         console.log("Ocorreu um erro ao obter os produtos!");
       }

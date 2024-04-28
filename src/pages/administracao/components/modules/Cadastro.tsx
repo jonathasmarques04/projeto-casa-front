@@ -46,7 +46,7 @@ function Cadastro() {
       const data = await response.json();
 
       if (data) {
-        setProdutos(data.produtos);
+        setProdutos(data);
       } else {
         console.log("Ocorreu um erro ao obter os produtos!");
       }
@@ -182,7 +182,7 @@ function Cadastro() {
     try {
       const response = await $.ajax({
         type: "POST",
-        url: `http://localhost:3020/produto/1`,
+        url: `http://localhost:3020/produto`,
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify({
@@ -220,7 +220,6 @@ function Cadastro() {
           console.log(error);
         },
       });
-
       if (response.ok) {
         getProdutos();
       } else {

@@ -48,9 +48,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       maxAge: 60 * 60 * 1, // 1 hour
     });
 
-    const response = await api.post("/login", { email, password });
+    const response = await api.post("/usuario/login", { email, password });
 
-    if (response.data == 'Email válido') {
+    if (response.data.message == "Email válido" ) {
       Router.push("/administracao");
     }
 

@@ -42,7 +42,7 @@ export async function fetchImagensDaAPI(param: string): Promise<string[]> {
     }
 
     const data = await response.json();
-    const produtos: Produto = data.produto;
+    const produtos: Produto = data;
     const imagens: string[] = [];
 
     for (let i = 1; i <= 12; i++) {

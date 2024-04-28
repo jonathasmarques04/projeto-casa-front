@@ -31,7 +31,7 @@ export async function fetchInformacoesSuperiorApi(
     }
 
     const data = await response.json();
-    const produtos: Produto = data.produto;
+    const produtos: Produto = data;
 
     const information: string[] = [
       produtos.titulo,

@@ -7,7 +7,7 @@ function Body() {
   return (
     <Container >
       <Cadastro />
-      <ProdutosCadastrados />
+      {/* <ProdutosCadastrados /> */}
       <ExcluirProdutos />
     </Container>
   );
