@@ -1,12 +1,10 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import {
-  sxGridContainerFade,
-} from "../../../styles/stylesInvestimento";
-import { Outfit } from 'next/font/google'
+import { sxGridContainerFade } from "../../../styles/stylesInvestimento";
+import { Outfit } from "next/font/google";
 
-const outfit = Outfit({ subsets: ["latin"] })
+const outfit = Outfit({ subsets: ["latin"] });
 
 const informacoes = [
   {
@@ -51,16 +49,10 @@ function MainBody() {
             "@media (max-width: 764px)": {
               width: "100%",
               borderRadius: "30px",
-              height: 225
+              height: "fit-content",
             },
-            
-            "@media (max-width: 650px)": { height: 250 },
-            "@media (max-width: 550px)": { height: 275 },
-            "@media (max-width: 470px)": { height: 300 },
-            "@media (max-width: 380px)": { height: 350 },
-            "@media (max-width: 355px)": { height: 370 },
-            "@media (max-width: 330px)": { height: 380 },
-          }}>
+          }}
+        >
           <Box
             sx={{
               margin: "auto",
@@ -126,13 +118,8 @@ function MainBody() {
             "@media (max-width: 764px)": {
               width: "100%",
               borderRadius: "30px",
+              height: "fit-content",
             },
-            "@media (max-width: 650px)": { height: 200 },
-            "@media (max-width: 550px)": { height: 250 },
-            "@media (max-width: 470px)": { height: 300 },
-            "@media (max-width: 380px)": { height: 350 },
-            "@media (max-width: 355px)": { height: 370 },
-            "@media (max-width: 330px)": { height: 380 },
           }}
         >
           <Box
@@ -209,12 +196,8 @@ function MainBody() {
             "@media (max-width: 764px)": {
               width: "100%",
               borderRadius: "30px",
-            },"@media (max-width: 650px)": { height: 250 },
-            "@media (max-width: 550px)": { height: 275 },
-            "@media (max-width: 470px)": { height: 300 },
-            "@media (max-width: 380px)": { height: 350 },
-            "@media (max-width: 355px)": { height: 370 },
-            "@media (max-width: 330px)": { height: 380 },
+              height: "fit-content",
+            },
           }}
         >
           <Box
@@ -283,11 +266,8 @@ function MainBody() {
             "@media (max-width: 764px)": {
               width: "100%",
               borderRadius: "30px",
+              height: "fit-content",
             },
-            "@media (max-width: 780px)": { height: 175 },
-            "@media (max-width: 470px)": { height: 200 },
-            "@media (max-width: 420px)": { height: 250 },
-            "@media (max-width: 330px)": { height: 300 },
           }}
         >
           <Box

@@ -19,6 +19,8 @@ function Empreendimento() {
   const router = useRouter();
   const idProduto = router.query.idProduto;
 
+  console.log("idProduto", idProduto);
+
   const [apiImages, setApiImages] = useState<string[]>([]);
 
   useEffect(() => {
