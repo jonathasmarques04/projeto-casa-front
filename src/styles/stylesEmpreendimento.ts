@@ -72,11 +72,11 @@ export const sxUnicGreatBox: SxProps<Theme> = {
 };
 
 export const sxGreatGridItem: SxProps<Theme> = {
-  display: "flex",
+  display: { sm: 'flex' },
   margin: "auto",
   boxSizing: "border-box",
   position: "relative",
-  height: "115px",
+  height: { sm: '115px', xs: 'fit-content' },
   background: "#242424",
   border: "1px solid #FFFFFF",
   borderRadius: "12px",
@@ -84,7 +84,7 @@ export const sxGreatGridItem: SxProps<Theme> = {
   justifyContent: "center",
   gap: 10,
   "@media (max-width: 990px)": { gap: 5 },
-  "@media (max-width: 500px)": { gap: 3, ml: 1, mr: 1 },
+  "@media (max-width: 500px)": { ml: 1, mr: 1 },
 };
 
 export const sxStyleHeader: SxProps<Theme> = {

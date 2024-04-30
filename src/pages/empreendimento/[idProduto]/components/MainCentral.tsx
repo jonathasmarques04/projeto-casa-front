@@ -113,9 +113,10 @@ function MainCentral({ apiInformations }: ApiInformations) {
         xs={12}
         sm={8}
         md={6}
+        
       >
         {Object.keys(updatedInformacoes).map((key) => (
-          <Box id="Informações" key={""}>
+          <Box id="Informações" key={""} sx={{ textAlign: 'center', pt: { sm: 0, xs: 3 }, pb: { sm: 0, xs: 2 } }}>
             <Image
               src={updatedInformacoes[key].src}
               width={30}

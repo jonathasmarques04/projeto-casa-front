@@ -84,8 +84,6 @@ function CardInput({ apiInformations }: ApiInformations) {
     }
   };
 
-  console.log(produtos);
-
   return (
     <Grid container>
       <Grid

@@ -7,9 +7,9 @@ import Image from "next/image";
 import { sxButtonMaior } from "../../../../styles/stylesEmpreendimento";
 
 import { useState } from "react";
-import { Outfit } from 'next/font/google'
+import { Outfit } from "next/font/google";
 
-const outfit = Outfit({ subsets: ["latin"], weight: '500' })
+const outfit = Outfit({ subsets: ["latin"], weight: "500" });
 
 interface Produto {
   imagem: string;
@@ -36,7 +36,9 @@ interface CarrosselProps {
 
 export async function fetchImagensDaAPI(param: string): Promise<string[]> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_PRODUTO}/${param}`);
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_URL_PRODUTO}/${param}`
+    );
     if (!response.ok) {
       throw new Error("Erro na requisição da API");
     }
@@ -93,7 +95,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
           GALERIA
         </Button>
       </Grid>
-      <Grid item sx={{ margin: "auto", mb: 5 }}>
+      <Grid xs={6} item sx={{ margin: "auto", mb: 5 }}>
         <Box mt={12} display="flex" justifyContent="center">
           <Box display="flex" alignItems="center" justifyContent="center">
             <Button
@@ -102,7 +104,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
             >
               <ArrowBackIosNewIcon color="error" />
             </Button>
-            <Slide direction="right" in={true}>
+            
               <Grid
                 display="flex"
                 justifyContent="center"
@@ -118,15 +120,18 @@ function Carrossel({ apiImages }: CarrosselProps) {
                   },
                 }}
               >
+                <Slide direction="right" in={true}>
                 <Image
                   src={apiImages && apiImages[activeIndex]}
+                  alt="Imagem"
                   width={500}
                   height={500}
-                  alt="Imagem"
                   style={{ borderRadius: "25px" }}
+                  sizes="(max-width: 768px): 100vw, 33vw"
                 />
+                </Slide>
               </Grid>
-            </Slide>
+            
             <Button
               sx={{ "@media (max-width: 490px)": { ml: 3 } }}
               onClick={handleNext}
