@@ -127,7 +127,7 @@ function Carrossel({ apiImages }: CarrosselProps) {
                   width={500}
                   height={500}
                   style={{ borderRadius: "25px" }}
-                  sizes="(max-width: 768px): 100vw, 33vw"
+                  layout="responsive"
                 />
                 </Slide>
               </Grid>

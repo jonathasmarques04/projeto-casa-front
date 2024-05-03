@@ -65,23 +65,19 @@ function MainSuperior({ apiInformations }: ApiInformations) {
   }, [apiInformations, router]);
 
   return (
-    <Grid container>
+    <Grid container width='90%' m='auto'>
       <Grid
         item
-        mr={12}
-        ml={12}
         xs={12}
-        md={12}
         sx={{
           borderRadius: "15px",
           backgroundSize: "100%",
           backgroundPosition: "100%",
           backgroundRepeat: "no-repeat",
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${apiInformations && apiInformations.length > 3 ? apiInformations[3] : '/imagem-predio.svg'}")`,
-          "@media (max-width: 990px)": { ml: 2, mr: 2 }
         }}
       >
-        <Box ml={1} mt={4}>
+        <Box pl={1} mt={4}>
           <Typography
             sx={{ color: "#FFF" }}
             className={outfit.className}
