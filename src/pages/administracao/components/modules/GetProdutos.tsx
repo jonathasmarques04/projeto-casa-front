@@ -5,9 +5,13 @@ import {
   TableRow,
   Typography,
   TableHead,
+  Table
 } from "@mui/material";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+
+import dynamic from 'next/dynamic';
+
+const DynamicImage = dynamic(() => import('next/image'), { ssr: false });
 
 interface Produto {
   idProduto: string;
@@ -23,9 +27,12 @@ interface Produto {
 
 function ProdutosCadastrados() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [isClient, setIsClient] = useState(false);
+
 
   useEffect(() => {
     getProdutos();
+    setIsClient(true)
   }, []);
 
   const getProdutos = async () => {
@@ -46,7 +53,8 @@ function ProdutosCadastrados() {
   return (
     <Grid xs={12}>
       <Typography variant="h5">Produtos Cadastrados</Typography>
-      <TableBody id="tabela-produtos">
+      <Table>
+      <TableHead>
         <TableRow>
           <TableCell>ID do Produto</TableCell>
           <TableCell>Título</TableCell>
@@ -58,27 +66,32 @@ function ProdutosCadastrados() {
           <TableCell>Localização</TableCell>
           <TableCell>Imagem</TableCell>
         </TableRow>
-        {produtos.map((produtos, index) => (
+      </TableHead>
+      <TableBody id="tabela-produtos">
+        {produtos.map((produto, index) => (
           <TableRow key={index}>
-            <TableCell>{produtos.idProduto}</TableCell>
-            <TableCell>{produtos.titulo}</TableCell>
-            <TableCell>{produtos.quartos}</TableCell>
-            <TableCell>{produtos.suites}</TableCell>
-            <TableCell>{produtos.banheiros}</TableCell>
-            <TableCell>{produtos.areaUtil}m²</TableCell>
-            <TableCell>{produtos.areaTotal}m²</TableCell>
-            <TableCell>{produtos.localizacao}</TableCell>
+            <TableCell>{produto.idProduto}</TableCell>
+            <TableCell>{produto.titulo}</TableCell>
+            <TableCell>{produto.quartos}</TableCell>
+            <TableCell>{produto.suites}</TableCell>
+            <TableCell>{produto.banheiros}</TableCell>
+            <TableCell>{produto.areaUtil}m²</TableCell>
+            <TableCell>{produto.areaTotal}m²</TableCell>
+            <TableCell>{produto.localizacao}</TableCell>
             <TableCell>
-              <Image
-                src={produtos.imagem}
-                width={50}
-                height={50}
-                alt="Imagem"
-              />
+              {isClient && (
+                <DynamicImage
+                  src={produto.imagem}
+                  width={50}
+                  height={50}
+                  alt="Imagem"
+                />
+              )}
             </TableCell>
           </TableRow>
         ))}
       </TableBody>
+    </Table>
     </Grid>
   );
 }

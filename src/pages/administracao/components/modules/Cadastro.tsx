@@ -210,8 +210,9 @@ function Cadastro() {
         }),
         success: function (data) {
           console.log(data);
-          if (data.produto) {
+          if (data) {
             console.log("Produto cadastrado com sucesso!");
+            window.location.reload()            
           } else {
             console.log("Ocorreu um erro!");
           }
@@ -220,7 +221,7 @@ function Cadastro() {
           console.log(error);
         },
       });
-      if (response.ok) {
+      if (response) {
         getProdutos();
       } else {
         console.log("Falha no produto.");
